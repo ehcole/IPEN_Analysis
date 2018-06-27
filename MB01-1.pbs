@@ -10,7 +10,7 @@
 #PBS -V
 
 #PBS -A wrm_fluxoe
-#PBS -q flux
+#PBS -q fluxoe
 #PBS -l qos=flux
 #### End PBS preamble
 if [ -n "$PBS_NODEFILE" ]; then cat $PBS_NODEFILE; fi
