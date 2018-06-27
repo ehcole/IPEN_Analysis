@@ -5,7 +5,7 @@
 #PBS -M ehcole@umich.edu
 #PBS -m abe
 
-#PBS -l nodes=5:ppn=12,walltime=03:00:00 
+#PBS -l nodes=5:ppn=12,pmem=2000m,walltime=03:00:00 
 #PBS -j oe
 #PBS -V
 
@@ -13,7 +13,6 @@
 #PBS -q fluxoe
 #PBS -l qos=flux
 #### End PBS preamble
-if [ -n "$PBS_NODEFILE" ]; then cat $PBS_NODEFILE; fi
 
 if [ -n "$PBS_O_WORKDIR" ]; then cd $PBS_O_WORKDIR; fi
 

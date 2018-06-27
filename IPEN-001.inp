@@ -3,7 +3,7 @@
   size 3
   apitch 42.0
   height 80.3
-
+  rated 0.0001 1
   lower_plate GP 2.2 0.99
 
   lower_ref H2O 30.0 0.5
@@ -253,6 +253,7 @@ axial 1 0.0
  flow  100.0
  tinlet 20 C
  rodbank 1 3972
+ modden 1
  edit fsr_flux_2g fsr_flux_power
 
 [EDITS]
@@ -279,17 +280,17 @@ axial 1 0.0
    res_up_scatter        false
    
 !MSED
-   cmfd                          msed
-   cmfd_shift_method             none
-   cmfd_shift_method_1G          adaptive
-   cmfd_num_inners               2
-   cmfd_num_inners_1G            5
-   petsc_linear_solver_method    multigrid
-   petsc_linear_solver_method_1G multigrid
-   multigrid_smoother            sor
-   multigrid_num_smooth          2
-   multigrid_cg_solver           gmres
-   multigrid_cg_solver_its       10
+!   cmfd                          msed
+!   cmfd_shift_method             none
+!   cmfd_shift_method_1G          adaptive
+!   cmfd_num_inners               2
+!   cmfd_num_inners_1G            5
+!   petsc_linear_solver_method    multigrid
+!   petsc_linear_solver_method_1G multigrid
+!   multigrid_smoother            sor
+!   multigrid_num_smooth          2
+!   multigrid_cg_solver           gmres
+!   multigrid_cg_solver_its       10
 !   multigrid_smoother_1G         sor
 !   multigrid_cg_solver_1G        gmres
 !   multigrid_cg_solver_its_1G    15

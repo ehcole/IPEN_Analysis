@@ -13,7 +13,6 @@
 #PBS -q fluxoe
 #PBS -l qos=flux
 #### End PBS preamble
-if [ -n "$PBS_NODEFILE" ]; then cat $PBS_NODEFILE; fi
 
 if [ -n "$PBS_O_WORKDIR" ]; then cd $PBS_O_WORKDIR; fi
 
