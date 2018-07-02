@@ -1,5 +1,11 @@
 import h5py
 import numpy as np
-f = h5py.File("../IPEN-004/IPEN-004.h5", 'r')
+import sys
+f = h5py.File(sys.argv[1], 'r')
 #print(list(f.keys()))
-print(f['STATE_0001/keff'][()])
+keff = f['STATE_0001/keff'][()]
+if keff > 1:
+    print((keff - 1) * 10**5, "pcm supercritical")
+else:
+    print((keff - 1) * 10**5, "pcm subcritical")
+
