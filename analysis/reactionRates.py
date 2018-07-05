@@ -33,7 +33,7 @@ for i in range(modelData.shape[0]):
             modelData[i][j] += modelData4D[i][j][k][0] / modelData4D.shape[2]
 
 
-expDataDF = pd.read_csv("../expData/reactionRates.csv")
+expDataDF = pd.read_csv("/scratch/wrm_fluxoe/ehcole/IPEN_Analysis/expData/reactionRates.csv")
 expData = dict()
 for col in expDataDF.columns[1:]:
     sum = 0

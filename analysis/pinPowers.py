@@ -8,7 +8,7 @@ import sys
 model of a core with one assembly'''
 
 #load data
-expData = np.genfromtxt("../expData/pinPowers.csv", delimiter=',')
+expData = np.genfromtxt("/scratch/wrm_fluxoe/ehcole/IPEN_Analysis/expData/pinPowers.csv", delimiter=',')
 h5 = h5py.File(sys.argv[1], 'r')
 modelData4D = h5["STATE_0001/pin_powers"]
 modelData = np.zeros([modelData4D.shape[0], modelData4D.shape[1]])
@@ -59,6 +59,7 @@ absPercents = np.absolute(diffPercents)
 
 print("MAPE:", np.mean(absPercents[np.where(absPercents != 0)]))
 print("RMSE:", rmse(modelDatapoints, expDatapoints))
+
 
 
 

@@ -3,13 +3,14 @@
   size 3
   apitch 42.0
   height 1.0
-  rated 0.0001 1
+  rated 0.000004 1
 
   !lower_plate GP 2.2 0.99
 
   !lower_ref H2O 30.0 0.5
   bc_top reflecting
   bc_bot reflecting
+  bc_rad reflecting
 
   assm_map
 	A1
@@ -70,7 +71,7 @@
 !cells. data from figure 3.6-2 pg 304
 !fuel rod
  cell F1	0.4235 0.42873 0.49037 / AMA air CDG !alumina section of fuel rod. 	 
- cell F2	0.4235 0.42873 0.49037 / UO2 air CDG !UO2 section of fuel rod
+ cell F2	0.42447 0.42873 0.49037 / UO2 air CDG !UO2 section of fuel rod
  cell F3	0.365 0.425 0.42873 0.49037 / air ST air CDG !void section of fuel rod
 
 !guide tube
@@ -163,7 +164,9 @@ axial 1 0.0
  flow  100.0
  tinlet 20 C
  rodbank 1 1
+ modden 1
  edit fsr_flux_2g fsr_flux_power
+ 
 
 [MPACT]
    jagged                false
@@ -175,19 +178,20 @@ axial 1 0.0
    shield_ray_spacing    0.04
    res_up_scatter        false
    power_edit          fission
-   
+!   axial_buckling 0.002494   
+
 !MSED
-   cmfd                          msed
-   cmfd_shift_method             none
-   cmfd_shift_method_1G          adaptive
-   cmfd_num_inners               2
-   cmfd_num_inners_1G            5
-   petsc_linear_solver_method    multigrid
-   petsc_linear_solver_method_1G multigrid
-   multigrid_smoother            sor
-   multigrid_num_smooth          2
-   multigrid_cg_solver           gmres
-   multigrid_cg_solver_its       10
+!   cmfd                          msed
+!   cmfd_shift_method             none
+!   cmfd_shift_method_1G          adaptive
+!   cmfd_num_inners               2
+!   cmfd_num_inners_1G            5
+!   petsc_linear_solver_method    multigrid
+!   petsc_linear_solver_method_1G multigrid
+!   multigrid_smoother            sor
+!   multigrid_num_smooth          2
+!   multigrid_cg_solver           gmres
+!   multigrid_cg_solver_its       10
 !   multigrid_smoother_1G         sor
 !   multigrid_cg_solver_1G        gmres
 !   multigrid_cg_solver_its_1G    15

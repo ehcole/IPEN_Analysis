@@ -10,6 +10,7 @@
   !lower_ref H2O 30.0 0.5
   bc_top reflecting
   bc_bot reflecting
+  bc_rad reflecting
 
   assm_map
 	A1
@@ -71,7 +72,7 @@
  cell F2	0.42447 0.42873 0.49037 / UO2 air CDG !UO2 section of fuel rod
 
 !guide tube
- cell GT	0.565 0.6 / H2O GTC
+ cell GT	0.565 0.6 / mod GTC !air?
  cell G2        0.565 0.6 / H2O GTC
       	    
 !water
@@ -141,20 +142,22 @@ axial 1 0.0
    ray_spacing           0.04
    shield_ray_spacing    0.04
    res_up_scatter        false
-   power_edit          fission
+!   power_edit          fission
+   axial_buckling      0.0002494
+
    
 !MSED
-   cmfd                          msed
-   cmfd_shift_method             none
-   cmfd_shift_method_1G          adaptive
-   cmfd_num_inners               2
-   cmfd_num_inners_1G            5
-   petsc_linear_solver_method    multigrid
-   petsc_linear_solver_method_1G multigrid
-   multigrid_smoother            sor
-   multigrid_num_smooth          2
-   multigrid_cg_solver           gmres
-   multigrid_cg_solver_its       10
+!   cmfd                          msed
+!   cmfd_shift_method             none
+!   cmfd_shift_method_1G          adaptive
+!   cmfd_num_inners               2
+!   cmfd_num_inners_1G            5
+!   petsc_linear_solver_method    multigrid
+!   petsc_linear_solver_method_1G multigrid
+!   multigrid_smoother            sor
+!   multigrid_num_smooth          2
+!   multigrid_cg_solver           gmres
+!   multigrid_cg_solver_its       10   
 !   multigrid_smoother_1G         sor
 !   multigrid_cg_solver_1G        gmres
 !   multigrid_cg_solver_its_1G    15
