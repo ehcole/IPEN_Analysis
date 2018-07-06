@@ -5,9 +5,10 @@
   <ParameterList name="STATES">
     <ParameterList name="State_1">
       <Parameter name="bank_labels" type="Array(string)" value="{1}"/>
-      <Parameter name="bank_pos" type="Array(int)" value="{1}"/>
+      <Parameter name="bank_pos" type="Array(int)" value="{5806}"/>
       <Parameter name="edit" type="Array(string)" value="{fsr_flux_2g,fsr_flux_power}"/>
       <Parameter name="flow" type="double" value="100.0"/>
+      <Parameter name="modden" type="double" value="1"/>
       <Parameter name="power" type="double" value="100.0"/>
       <Parameter name="sym" type="string" value="full"/>
       <Parameter name="tinlet" type="double" value="20"/>
@@ -217,13 +218,16 @@
     </ParameterList>
     <Parameter name="apitch" type="double" value="42.0"/>
     <Parameter name="assm_map" type="Array(string)" value="{A1}"/>
-    <Parameter name="bc_bot" type="string" value="reflecting"/>
-    <Parameter name="bc_rad" type="string" value="reflecting"/>
-    <Parameter name="bc_top" type="string" value="reflecting"/>
     <Parameter name="core_size" type="int" value="3"/>
     <Parameter name="crd_bank" type="Array(string)" value="{1}"/>
     <Parameter name="crd_map" type="Array(string)" value="{1}"/>
-    <Parameter name="height" type="double" value="1.0"/>
+    <Parameter name="height" type="double" value="80.3"/>
+    <Parameter name="lower_mat" type="string" value="GP"/>
+    <Parameter name="lower_refl_mats" type="Array(string)" value="{H2O}"/>
+    <Parameter name="lower_refl_thicks" type="Array(double)" value="{30.0}"/>
+    <Parameter name="lower_refl_vfracs" type="Array(double)" value="{0.5}"/>
+    <Parameter name="lower_thick" type="double" value="2.2"/>
+    <Parameter name="lower_vfrac" type="double" value="0.99"/>
     <Parameter name="rated_flow" type="double" value="125.9978"/>
     <Parameter name="rated_power" type="double" value="0.000004"/>
     <Parameter name="shape" type="Array(int)" value="{0,0,0,0,1,0,0,0,0}"/>
@@ -235,14 +239,40 @@
           <Parameter name="cell_map" type="Array(string)" value="{F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,G2,F2,F2,F2,G2,F2,F2,F2,F2,F2,F2,F2,F2,GT,F2,F2,F2,GT,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,G2,F2,F2,F2,G2,F2,F2,F2,G2,F2,F2,F2,F2,GT,F2,F2,F2,GT,F2,F2,F2,GT,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,G2,F2,F2,F2,G2,F2,F2,F2,F2,F2,F2,F2,F2,GT,F2,F2,F2,GT,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,G2,F2,F2,F2,G2,F2,F2,F2,G2,F2,F2,F2,F2,GT,F2,F2,F2,GT,F2,F2,F2,GT,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,G2,F2,F2,F2,G2,F2,F2,F2,F2,F2,F2,F2,F2,GT,F2,F2,F2,GT,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,GT,F2,F2,F2,GT,F2,F2,F2,F2,F2,F2,F2,F2,G2,F2,F2,F2,G2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,GT,F2,F2,F2,GT,F2,F2,F2,GT,F2,F2,F2,F2,G2,F2,F2,F2,G2,F2,F2,F2,G2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,GT,F2,F2,F2,GT,F2,F2,F2,F2,F2,F2,F2,F2,G2,F2,F2,F2,G2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,GT,F2,F2,F2,GT,F2,F2,F2,GT,F2,F2,F2,F2,G2,F2,F2,F2,G2,F2,F2,F2,G2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,GT,F2,F2,F2,GT,F2,F2,F2,F2,F2,F2,F2,F2,G2,F2,F2,F2,G2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,F2,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW}"/>
           <Parameter name="label" type="string" value="2"/>
         </ParameterList>
+        <ParameterList name="CellMap_3">
+          <Parameter name="cell_map" type="Array(string)" value="{F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,F1,F1,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,F1,F1,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,F1,F1,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,F1,F1,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,F1,F1,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,F1,F1,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW}"/>
+          <Parameter name="label" type="string" value="3"/>
+        </ParameterList>
+        <ParameterList name="CellMap_bot1">
+          <Parameter name="cell_map" type="Array(string)" value="{F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,F1,F1,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,F1,F1,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,F1,F1,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,F1,F1,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,F1,F1,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,GT,F1,F1,F1,GT,F1,F1,F1,F1,F1,F1,F1,F1,G2,F1,F1,F1,G2,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,F1,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW}"/>
+          <Parameter name="label" type="string" value="bot1"/>
+        </ParameterList>
+        <ParameterList name="CellMap_top4">
+          <Parameter name="cell_map" type="Array(string)" value="{F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,G2,F3,F3,F3,G2,F3,F3,F3,F3,F3,F3,F3,F3,GT,F3,F3,F3,GT,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,G2,F3,F3,F3,G2,F3,F3,F3,G2,F3,F3,F3,F3,GT,F3,F3,F3,GT,F3,F3,F3,GT,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,G2,F3,F3,F3,G2,F3,F3,F3,F3,F3,F3,F3,F3,GT,F3,F3,F3,GT,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,G2,F3,F3,F3,G2,F3,F3,F3,G2,F3,F3,F3,F3,GT,F3,F3,F3,GT,F3,F3,F3,GT,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,G2,F3,F3,F3,G2,F3,F3,F3,F3,F3,F3,F3,F3,GT,F3,F3,F3,GT,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,GT,F3,F3,F3,GT,F3,F3,F3,F3,F3,F3,F3,F3,G2,F3,F3,F3,G2,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,GT,F3,F3,F3,GT,F3,F3,F3,GT,F3,F3,F3,F3,G2,F3,F3,F3,G2,F3,F3,F3,G2,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,GT,F3,F3,F3,GT,F3,F3,F3,F3,F3,F3,F3,F3,G2,F3,F3,F3,G2,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,GT,F3,F3,F3,GT,F3,F3,F3,GT,F3,F3,F3,F3,G2,F3,F3,F3,G2,F3,F3,F3,G2,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,GT,F3,F3,F3,GT,F3,F3,F3,F3,F3,F3,F3,F3,G2,F3,F3,F3,G2,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,F3,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW,WW}"/>
+          <Parameter name="label" type="string" value="top4"/>
+        </ParameterList>
       </ParameterList>
       <ParameterList name="Cells">
+        <ParameterList name="Cell_F1">
+          <Parameter name="label" type="string" value="F1"/>
+          <Parameter name="mats" type="Array(string)" value="{AMA,air,CDG}"/>
+          <Parameter name="num_rings" type="int" value="3"/>
+          <Parameter name="radii" type="Array(double)" value="{0.4235,0.42873,0.49037}"/>
+          <Parameter name="type" type="string" value="other"/>
+        </ParameterList>
         <ParameterList name="Cell_F2">
           <Parameter name="label" type="string" value="F2"/>
           <Parameter name="mats" type="Array(string)" value="{UO2,air,CDG}"/>
           <Parameter name="num_rings" type="int" value="3"/>
           <Parameter name="radii" type="Array(double)" value="{0.42447,0.42873,0.49037}"/>
           <Parameter name="type" type="string" value="fuel"/>
+        </ParameterList>
+        <ParameterList name="Cell_F3">
+          <Parameter name="label" type="string" value="F3"/>
+          <Parameter name="mats" type="Array(string)" value="{air,ST,air,CDG}"/>
+          <Parameter name="num_rings" type="int" value="4"/>
+          <Parameter name="radii" type="Array(double)" value="{0.365,0.425,0.42873,0.49037}"/>
+          <Parameter name="type" type="string" value="other"/>
         </ParameterList>
         <ParameterList name="Cell_G2">
           <Parameter name="label" type="string" value="G2"/>
@@ -275,8 +305,8 @@
           <Parameter name="thden" type="double" value="0.0"/>
         </ParameterList>
       </ParameterList>
-      <Parameter name="axial_elevations" type="Array(double)" value="{0.00,1.00}"/>
-      <Parameter name="axial_labels" type="Array(string)" value="{2}"/>
+      <Parameter name="axial_elevations" type="Array(double)" value="{0.00,9.1,63.94,69.34,80.30}"/>
+      <Parameter name="axial_labels" type="Array(string)" value="{bot1,2,3,top4}"/>
       <Parameter name="label" type="string" value="A1"/>
       <Parameter name="num_pins" type="int" value="28"/>
       <Parameter name="ppitch" type="double" value="1.5"/>
@@ -286,12 +316,23 @@
   <ParameterList name="CONTROLS">
     <ParameterList name="Control_1">
       <ParameterList name="CellMaps">
+        <ParameterList name="CellMap_C1">
+          <Parameter name="cell_map" type="Array(string)" value="{-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,1,-,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,1,-,-,-,1,-,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,1,-,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,1,-,-,-,1,-,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,1,-,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,1,-,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,1,-,-,-,1,-,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,1,-,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,1,-,-,-,1,-,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,1,-,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-}"/>
+          <Parameter name="label" type="string" value="C1"/>
+        </ParameterList>
         <ParameterList name="CellMap_C2">
           <Parameter name="cell_map" type="Array(string)" value="{-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,2,-,-,-,2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,2,-,-,-,2,-,-,-,2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,2,-,-,-,2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,2,-,-,-,2,-,-,-,2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,2,-,-,-,2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,2,-,-,-,2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,2,-,-,-,2,-,-,-,2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,2,-,-,-,2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,2,-,-,-,2,-,-,-,2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,2,-,-,-,2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-}"/>
           <Parameter name="label" type="string" value="C2"/>
         </ParameterList>
       </ParameterList>
       <ParameterList name="Cells">
+        <ParameterList name="Cell_1">
+          <Parameter name="label" type="string" value="1"/>
+          <Parameter name="mats" type="Array(string)" value="{CDG}"/>
+          <Parameter name="num_rings" type="int" value="1"/>
+          <Parameter name="radii" type="Array(double)" value="{0.49037}"/>
+          <Parameter name="type" type="string" value="other"/>
+        </ParameterList>
         <ParameterList name="Cell_2">
           <Parameter name="label" type="string" value="2"/>
           <Parameter name="mats" type="Array(string)" value="{CRA,air,CDG}"/>
@@ -300,14 +341,17 @@
           <Parameter name="type" type="string" value="other"/>
         </ParameterList>
       </ParameterList>
-      <Parameter name="axial_elevations" type="Array(double)" value="{0.0,1.00}"/>
-      <Parameter name="axial_labels" type="Array(string)" value="{C2}"/>
+      <Parameter name="axial_elevations" type="Array(double)" value="{0.0,1.67,80.3}"/>
+      <Parameter name="axial_labels" type="Array(string)" value="{C1,C2}"/>
       <Parameter name="label" type="string" value="1"/>
-      <Parameter name="maxstep" type="int" value="1"/>
+      <Parameter name="maxstep" type="int" value="10000"/>
       <Parameter name="num_pins" type="int" value="28"/>
-      <Parameter name="stroke" type="double" value="1"/>
+      <Parameter name="stroke" type="double" value="80.3"/>
       <Parameter name="title" type="string" value="control rods"/>
     </ParameterList>
+  </ParameterList>
+  <ParameterList name="EDITS">
+    <Parameter name="axial_edit_bounds" type="Array(double)" value="{9.1,15.955,22.810,29.665,36.520,43.375,50.230,57.085,63.94,69.34,80.30}"/>
   </ParameterList>
   <ParameterList name="MPACT">
     <ParameterList name="2d1d">
@@ -322,7 +366,6 @@
       <Parameter name="sth_hgap" type="double" value="5678.3"/>
       <Parameter name="temptable_shape" type="bool" value="true"/>
     </ParameterList>
-    <Parameter name="axial_buckling" type="double" value="0.0002494"/>
     <ParameterList name="cmfd">
       <Parameter name="cmfd" type="string" value="adcmfd"/>
       <Parameter name="k_shift" type="double" value="1.5"/>
@@ -370,7 +413,7 @@
       <Parameter name="method" type="string" value="GRAPH"/>
       <Parameter name="num_angle" type="int" value="1"/>
       <Parameter name="num_energy" type="int" value="1"/>
-      <Parameter name="num_space" type="int" value="16"/>
+      <Parameter name="num_space" type="int" value="56"/>
       <Parameter name="num_threads" type="int" value="1"/>
     </ParameterList>
     <ParameterList name="quad_set">

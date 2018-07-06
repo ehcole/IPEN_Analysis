@@ -23,8 +23,8 @@ MPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACT
 ================================================================================
                                 MPACT v2.1.0      (  rev: 7694   SHA1: 83243c6)
                                                   (built: 16:09:35 Jun 21 2018)
-           Executing case: IPEN-009
-           by ehcole on nyx1040.arc-ts.umich.edu at 13:40:31, July 06, 2018...
+           Executing case: IPEN-011
+           by ehcole on nyx1040.arc-ts.umich.edu at 13:42:23, July 06, 2018...
 
 ================================================================================
 
@@ -33,7 +33,7 @@ MPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACT
         TYPE(ParamType_List) :: STATES=
             TYPE(ParamType_List) :: STATE_1=
                 1-D ARRAY TYPE(StringType) :: bank_labels=1
-                1-D ARRAY INTEGER(SNK) :: bank_pos=            0
+                1-D ARRAY INTEGER(SNK) :: bank_pos=         5806
                 INTEGER(SNK) :: pred_order=            0 !(XML Default)
                 INTEGER(SNK) :: corr_order=            0 !(XML Default)
                 REAL(SDK) :: boron=  0.000000000000000     !(XML Default)
@@ -59,10 +59,10 @@ MPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACT
         TYPE(ParamType_List) :: CORE=
             REAL(SDK) :: apitch=  42.00000000000000    
             1-D ARRAY TYPE(StringType) :: assm_map=A1
-            TYPE(StringType) :: bc_bot=reflecting
-            TYPE(StringType) :: bc_rad=reflecting
+            TYPE(StringType) :: bc_bot=vacuum
+            TYPE(StringType) :: bc_rad=vacuum
             TYPE(StringType) :: bc_sym=rot
-            TYPE(StringType) :: bc_top=reflecting
+            TYPE(StringType) :: bc_top=vacuum
             TYPE(StringType) :: core_name=Core
             INTEGER(SNK) :: core_size=            3
             1-D ARRAY TYPE(StringType) :: crd_bank=1
@@ -70,7 +70,13 @@ MPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACT
             TYPE(StringType) :: cycle_num=1
             1-D ARRAY TYPE(StringType) :: det_map=-
             1-D ARRAY TYPE(StringType) :: insert_map=-
-            INTEGER(SNK) :: NLowRefl=            0
+            INTEGER(SNK) :: NLowRefl=            2
+            TYPE(StringType) :: lower_mat=GP
+            REAL(SDK) :: lower_thick=  2.200000000000000    
+            REAL(SDK) :: lower_vfrac= 0.9900000000000000    
+            1-D ARRAY TYPE(StringType) :: lower_refl_mats=H2O
+            1-D ARRAY REAL(SDK) :: lower_refl_thicks= 30.000000000000    
+            1-D ARRAY REAL(SDK) :: lower_refl_vfracs=0.50000000000000    
             REAL(SDK) :: rated_flow=  125.9978000000000    
             REAL(SDK) :: rated_power= 0.4000000000000000E-05
             TYPE(StringType) :: reactor_type=PWR
@@ -475,8 +481,14 @@ MPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACT
                 INTEGER(SNK) :: num_pins=           28
                 REAL(SDK) :: ppitch=  1.500000000000000    
                 1-D ARRAY REAL(SDK) :: axial_elevations= 0.0000000000000    
-                                                         1.0000000000000    
-                1-D ARRAY TYPE(StringType) :: axial_labels=2
+                                                         9.1000000000000    
+                                                         63.940000000000    
+                                                         69.340000000000    
+                                                         80.300000000000    
+                1-D ARRAY TYPE(StringType) :: axial_labels=bot1
+                                                           2
+                                                           3
+                                                           top4
                 REAL(SDK) :: upper_nozzle_height=  0.000000000000000    
                 REAL(SDK) :: lower_nozzle_height=  0.000000000000000    
                 INTEGER(SNK) :: NumGridTypes=            0
@@ -485,9 +497,31 @@ MPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACT
                         TYPE(StringType) :: latlabel=2
                         1-D ARRAY INTEGER(SNK) :: iassemindices=            1
                         1-D ARRAY TYPE(StringType) :: latcellmap=F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, G2, F2, F2, F2, G2, F2, F2, F2, F2, F2, F2, F2, F2, GT, F2, F2, F2, GT, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, G2, F2, F2, F2, G2, F2, F2, F2, G2, F2, F2, F2, F2, GT, F2, F2, F2, GT, F2, F2, F2, GT, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, G2, F2, F2, F2, G2, F2, F2, F2, F2, F2, F2, F2, F2, GT, F2, F2, F2, GT, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, G2, F2, F2, F2, G2, F2, F2, F2, G2, F2, F2, F2, F2, GT, F2, F2, F2, GT, F2, F2, F2, GT, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, G2, F2, F2, F2, G2, F2, F2, F2, F2, F2, F2, F2, F2, GT, F2, F2, F2, GT, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, GT, F2, F2, F2, GT, F2, F2, F2, F2, F2, F2, F2, F2, G2, F2, F2, F2, G2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, GT, F2, F2, F2, GT, F2, F2, F2, GT, F2, F2, F2, F2, G2, F2, F2, F2, G2, F2, F2, F2, G2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, GT, F2, F2, F2, GT, F2, F2, F2, F2, F2, F2, F2, F2, G2, F2, F2, F2, G2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, GT, F2, F2, F2, GT, F2, F2, F2, GT, F2, F2, F2, F2, G2, F2, F2, F2, G2, F2, F2, F2, G2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, GT, F2, F2, F2, GT, F2, F2, F2, F2, F2, F2, F2, F2, G2, F2, F2, F2, G2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, F2, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW
-                INTEGER(SNK) :: NumCellMaps=            1
+                    TYPE(ParamType_List) :: CellMap_2=
+                        TYPE(StringType) :: latlabel=3
+                        1-D ARRAY INTEGER(SNK) :: iassemindices=            1
+                        1-D ARRAY TYPE(StringType) :: latcellmap=F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, F1, F1, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, F1, F1, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, F1, F1, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, F1, F1, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, F1, F1, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, F1, F1, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW
+                    TYPE(ParamType_List) :: CellMap_3=
+                        TYPE(StringType) :: latlabel=bot1
+                        1-D ARRAY INTEGER(SNK) :: iassemindices=            1
+                        1-D ARRAY TYPE(StringType) :: latcellmap=F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, F1, F1, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, F1, F1, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, F1, F1, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, F1, F1, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, F1, F1, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, GT, F1, F1, F1, GT, F1, F1, F1, F1, F1, F1, F1, F1, G2, F1, F1, F1, G2, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, F1, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW
+                    TYPE(ParamType_List) :: CellMap_4=
+                        TYPE(StringType) :: latlabel=top4
+                        1-D ARRAY INTEGER(SNK) :: iassemindices=            1
+                        1-D ARRAY TYPE(StringType) :: latcellmap=F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, G2, F3, F3, F3, G2, F3, F3, F3, F3, F3, F3, F3, F3, GT, F3, F3, F3, GT, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, G2, F3, F3, F3, G2, F3, F3, F3, G2, F3, F3, F3, F3, GT, F3, F3, F3, GT, F3, F3, F3, GT, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, G2, F3, F3, F3, G2, F3, F3, F3, F3, F3, F3, F3, F3, GT, F3, F3, F3, GT, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, G2, F3, F3, F3, G2, F3, F3, F3, G2, F3, F3, F3, F3, GT, F3, F3, F3, GT, F3, F3, F3, GT, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, G2, F3, F3, F3, G2, F3, F3, F3, F3, F3, F3, F3, F3, GT, F3, F3, F3, GT, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, GT, F3, F3, F3, GT, F3, F3, F3, F3, F3, F3, F3, F3, G2, F3, F3, F3, G2, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, GT, F3, F3, F3, GT, F3, F3, F3, GT, F3, F3, F3, F3, G2, F3, F3, F3, G2, F3, F3, F3, G2, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, GT, F3, F3, F3, GT, F3, F3, F3, F3, F3, F3, F3, F3, G2, F3, F3, F3, G2, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, GT, F3, F3, F3, GT, F3, F3, F3, GT, F3, F3, F3, F3, G2, F3, F3, F3, G2, F3, F3, F3, G2, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, GT, F3, F3, F3, GT, F3, F3, F3, F3, F3, F3, F3, F3, G2, F3, F3, F3, G2, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, F3, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW, WW
+                INTEGER(SNK) :: NumCellMaps=            4
                 TYPE(ParamType_List) :: Cells=
                     TYPE(ParamType_List) :: Cell_1=
+                        TYPE(StringType) :: type=other
+                        TYPE(StringType) :: label=F1
+                        INTEGER(SNK) :: num_rings=            3
+                        1-D ARRAY REAL(SDK) :: radii=0.42350000000000    
+                                                     0.42873000000000    
+                                                     0.49037000000000    
+                        1-D ARRAY TYPE(StringType) :: mats=AMA
+                                                           air
+                                                           CDG
+                    TYPE(ParamType_List) :: Cell_2=
                         TYPE(StringType) :: type=fuel
                         TYPE(StringType) :: label=F2
                         INTEGER(SNK) :: num_rings=            3
@@ -497,7 +531,19 @@ MPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACT
                         1-D ARRAY TYPE(StringType) :: mats=UO2
                                                            air
                                                            CDG
-                    TYPE(ParamType_List) :: Cell_2=
+                    TYPE(ParamType_List) :: Cell_3=
+                        TYPE(StringType) :: type=other
+                        TYPE(StringType) :: label=F3
+                        INTEGER(SNK) :: num_rings=            4
+                        1-D ARRAY REAL(SDK) :: radii=0.36500000000000    
+                                                     0.42500000000000    
+                                                     0.42873000000000    
+                                                     0.49037000000000    
+                        1-D ARRAY TYPE(StringType) :: mats=air
+                                                           ST
+                                                           air
+                                                           CDG
+                    TYPE(ParamType_List) :: Cell_4=
                         TYPE(StringType) :: type=other
                         TYPE(StringType) :: label=G2
                         INTEGER(SNK) :: num_rings=            2
@@ -505,7 +551,7 @@ MPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACT
                                                      0.60000000000000    
                         1-D ARRAY TYPE(StringType) :: mats=H2O
                                                            GTC
-                    TYPE(ParamType_List) :: Cell_3=
+                    TYPE(ParamType_List) :: Cell_5=
                         TYPE(StringType) :: type=other
                         TYPE(StringType) :: label=GT
                         INTEGER(SNK) :: num_rings=            2
@@ -513,13 +559,13 @@ MPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACT
                                                      0.60000000000000    
                         1-D ARRAY TYPE(StringType) :: mats=mod
                                                            GTC
-                    TYPE(ParamType_List) :: Cell_4=
+                    TYPE(ParamType_List) :: Cell_6=
                         TYPE(StringType) :: type=other
                         TYPE(StringType) :: label=WW
                         INTEGER(SNK) :: num_rings=            1
                         1-D ARRAY REAL(SDK) :: radii=0.60000000000000    
                         1-D ARRAY TYPE(StringType) :: mats=H2O
-                INTEGER(SNK) :: NumCells=            4
+                INTEGER(SNK) :: NumCells=            6
                 TYPE(ParamType_List) :: Materials=
                     TYPE(ParamType_List) :: Fuel_1=
                         INTEGER(SNK) :: ID=           31
@@ -537,20 +583,32 @@ MPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACT
         TYPE(ParamType_List) :: CONTROLS=
             TYPE(ParamType_List) :: Control_1=
                 1-D ARRAY REAL(SDK) :: axial_elevations= 0.0000000000000    
-                                                         1.0000000000000    
-                1-D ARRAY TYPE(StringType) :: axial_labels=C2
+                                                         1.6700000000000    
+                                                         80.300000000000    
+                1-D ARRAY TYPE(StringType) :: axial_labels=C1
+                                                           C2
                 TYPE(StringType) :: devicelabel=1
-                INTEGER(SNK) :: maxstep=            1
-                REAL(SDK) :: stroke=  1.000000000000000    
+                INTEGER(SNK) :: maxstep=        10000
+                REAL(SDK) :: stroke=  80.30000000000000    
                 INTEGER(SNK) :: num_pins=           28
                 TYPE(ParamType_List) :: CellMaps=
-                    TYPE(ParamType_List) :: CellMap_2=
+                    TYPE(ParamType_List) :: CellMap_5=
+                        TYPE(StringType) :: latlabel=C1
+                        1-D ARRAY INTEGER(SNK) :: iassemindices=            2
+                        1-D ARRAY TYPE(StringType) :: latcellmap=-, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, 1, -, -, -, 1, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, 1, -, -, -, 1, -, -, -, 1, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, 1, -, -, -, 1, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, 1, -, -, -, 1, -, -, -, 1, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, 1, -, -, -, 1, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, 1, -, -, -, 1, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, 1, -, -, -, 1, -, -, -, 1, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, 1, -, -, -, 1, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, 1, -, -, -, 1, -, -, -, 1, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, 1, -, -, -, 1, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -
+                    TYPE(ParamType_List) :: CellMap_6=
                         TYPE(StringType) :: latlabel=C2
                         1-D ARRAY INTEGER(SNK) :: iassemindices=            2
                         1-D ARRAY TYPE(StringType) :: latcellmap=-, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, 2, -, -, -, 2, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, 2, -, -, -, 2, -, -, -, 2, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, 2, -, -, -, 2, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, 2, -, -, -, 2, -, -, -, 2, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, 2, -, -, -, 2, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, 2, -, -, -, 2, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, 2, -, -, -, 2, -, -, -, 2, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, 2, -, -, -, 2, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, 2, -, -, -, 2, -, -, -, 2, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, 2, -, -, -, 2, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -, -
-                INTEGER(SNK) :: NumCellMaps=            1
+                INTEGER(SNK) :: NumCellMaps=            2
                 TYPE(ParamType_List) :: Cells=
-                    TYPE(ParamType_List) :: Cell_5=
+                    TYPE(ParamType_List) :: Cell_7=
+                        TYPE(StringType) :: type=other
+                        TYPE(StringType) :: label=1
+                        INTEGER(SNK) :: num_rings=            1
+                        1-D ARRAY REAL(SDK) :: radii=0.49037000000000    
+                        1-D ARRAY TYPE(StringType) :: mats=CDG
+                    TYPE(ParamType_List) :: Cell_8=
                         TYPE(StringType) :: type=other
                         TYPE(StringType) :: label=2
                         INTEGER(SNK) :: num_rings=            3
@@ -560,19 +618,20 @@ MPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACT
                         1-D ARRAY TYPE(StringType) :: mats=CRA
                                                            air
                                                            CDG
-                INTEGER(SNK) :: NumCells=            1
+                INTEGER(SNK) :: NumCells=            2
             INTEGER(SNK) :: NControlRods=            1
         TYPE(ParamType_List) :: INSERTS=
             INTEGER(SNK) :: NInserts=            0
         TYPE(ParamType_List) :: DETECTORS=
             INTEGER(SNK) :: NDetectors=            0
+        TYPE(ParamType_List) :: EDITS=
+            1-D ARRAY REAL(SDK) :: axial_edit_bounds= 9.1000000000000    ,  15.955000000000    ,  22.810000000000    ,  29.665000000000    ,  36.520000000000    ,  43.375000000000    ,  50.230000000000    ,  57.085000000000    ,  63.940000000000    ,  69.340000000000    ,  80.300000000000    
         TYPE(ParamType_List) :: MPACT=
             REAL(SDK) :: ray_spacing= 0.4000000000000000E-01
             TYPE(ParamType_List) :: PinMeshGeom=
                 REAL(SDK) :: AziCutoff= 0.1000000000000000E-01
             REAL(SDK) :: shield_ray_spacing= 0.4000000000000000E-01
             TYPE(StringType) :: moc_kernel=mg
-            REAL(SDK) :: Bsq= 0.2494000000000000E-03
             TYPE(StringType) :: grid_treatment=equal_mass
             TYPE(ParamType_List) :: quad_set=
                 TYPE(StringType) :: quad_type=CHEBYSHEV-YAMAMOTO
@@ -602,7 +661,7 @@ MPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACT
                 TYPE(StringType) :: scattering=TCP0
                 TYPE(StringType) :: reflscattering=NULL
             TYPE(ParamType_List) :: parallel_env=
-                INTEGER(SNK) :: num_space=           16
+                INTEGER(SNK) :: num_space=           56
                 INTEGER(SNK) :: num_angle=            1
                 INTEGER(SNK) :: num_energy=            1
                 INTEGER(SNK) :: num_threads=            1
@@ -687,10 +746,23 @@ MPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACT
          AutoMesh Method        =          NONFUEL
          Minimum Axial Mesh     =  2.0000000000000    
          Maximum Axial Mesh     =  20.000000000000    
-         Number of Axial Meshes =      1
+         Number of Axial Meshes =     14
          Mesh regions, starting from the bottom:
                Mesh Region      Mesh Thickness        Lower Height      Upper Height 
-                     1         1.0000000000000        0.0000000000000        1.0000000000000    
+                     1         15.000000000000        0.0000000000000        15.000000000000    
+                     2         15.000000000000        15.000000000000        30.000000000000    
+                     3         2.2000000000000        30.000000000000        32.200000000000    
+                     4         9.1000000000000        32.200000000000        41.300000000000    
+                     5         6.8550000000000        41.300000000000        48.155000000000    
+                     6         6.8550000000000        48.155000000000        55.010000000000    
+                     7         6.8550000000000        55.010000000000        61.865000000000    
+                     8         6.8550000000000        61.865000000000        68.720000000000    
+                     9         6.8550000000000        68.720000000000        75.575000000000    
+                    10         6.8550000000000        75.575000000000        82.430000000000    
+                    11         6.8550000000000        82.430000000000        89.285000000000    
+                    12         6.8550000000000        89.285000000000        96.140000000000    
+                    13         5.4000000000000        96.140000000000        101.54000000000    
+                    14         10.960000000000        101.54000000000        112.50000000000    
 
      = Product Quadrature Edits =
 
@@ -1646,51 +1718,8 @@ MPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACT
                             8016     3.343670572336134E-02
 
 
-         Material Name            = CRA !Control
-         Material ID Number       =     33
-         Number of Isotopes       =      7
-         Is Material Fluid?       = F
-         Is Material Fuel?        = F
-         Is Material Resonant?    = T
-         Is Material Depletable?  = F
-         Material Temperature (K) =   293.15    
-         Material Density (g/cc)  =   10.007    
-         XS Component Information:    
-               XS Library File Name     = /nfs/turbo/wrmfluxoe/install/MPACT_20180621/data/mpact51g_71_4.3m2_03262018.fmt
-               XS Library Tag           = 
-               +------------------------------------------+
-               | XS Record Name | Number Density (#/b-cm) |
-               +------------------------------------------+
-                           47107     2.297800000000000E-02
-                           47109     2.134700000000000E-02
-                           49000     7.851700000000000E-03
-                           48000     2.589400000000000E-03
-                            6000     1.505200000000000E-03
-                           16000     1.879100000000000E-04
-                            8016     1.770300000000000E-03
-
-
-         Material Name            = air !Control
-         Material ID Number       =     34
-         Number of Isotopes       =      2
-         Is Material Fluid?       = F
-         Is Material Fuel?        = F
-         Is Material Resonant?    = F
-         Is Material Depletable?  = F
-         Material Temperature (K) =   293.15    
-         Material Density (g/cc)  =  0.11890E-02
-         XS Component Information:    
-               XS Library File Name     = /nfs/turbo/wrmfluxoe/install/MPACT_20180621/data/mpact51g_71_4.3m2_03262018.fmt
-               XS Library Tag           = 
-               +------------------------------------------+
-               | XS Record Name | Number Density (#/b-cm) |
-               +------------------------------------------+
-                            7014     3.911237573378745E-05
-                            8016     1.052455213030102E-05
-
-
          Material Name            = CDG !Control
-         Material ID Number       =     35
+         Material ID Number       =     33
          Number of Isotopes       =     10
          Is Material Fluid?       = F
          Is Material Fuel?        = F
@@ -1716,15 +1745,194 @@ MPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACT
                            42000     8.452000000000000E-05
 
 
+         Material Name            = CRA !Control
+         Material ID Number       =     34
+         Number of Isotopes       =      7
+         Is Material Fluid?       = F
+         Is Material Fuel?        = F
+         Is Material Resonant?    = T
+         Is Material Depletable?  = F
+         Material Temperature (K) =   293.15    
+         Material Density (g/cc)  =   10.007    
+         XS Component Information:    
+               XS Library File Name     = /nfs/turbo/wrmfluxoe/install/MPACT_20180621/data/mpact51g_71_4.3m2_03262018.fmt
+               XS Library Tag           = 
+               +------------------------------------------+
+               | XS Record Name | Number Density (#/b-cm) |
+               +------------------------------------------+
+                           47107     2.297800000000000E-02
+                           47109     2.134700000000000E-02
+                           49000     7.851700000000000E-03
+                           48000     2.589400000000000E-03
+                            6000     1.505200000000000E-03
+                           16000     1.879100000000000E-04
+                            8016     1.770300000000000E-03
+
+
+         Material Name            = air !Control
+         Material ID Number       =     35
+         Number of Isotopes       =      2
+         Is Material Fluid?       = F
+         Is Material Fuel?        = F
+         Is Material Resonant?    = F
+         Is Material Depletable?  = F
+         Material Temperature (K) =   293.15    
+         Material Density (g/cc)  =  0.11890E-02
+         XS Component Information:    
+               XS Library File Name     = /nfs/turbo/wrmfluxoe/install/MPACT_20180621/data/mpact51g_71_4.3m2_03262018.fmt
+               XS Library Tag           = 
+               +------------------------------------------+
+               | XS Record Name | Number Density (#/b-cm) |
+               +------------------------------------------+
+                            7014     3.911237573378745E-05
+                            8016     1.052455213030102E-05
+
+
+         Material Name            = Core Bottom Reflector 1 mixture
+         Material ID Number       =     36
+         Number of Isotopes       =      2
+         Is Material Fluid?       = T
+         Is Material Fuel?        = F
+         Is Material Resonant?    = F
+         Is Material Depletable?  = F
+         Material Temperature (K) =   293.15    
+         Material Density (g/cc)  =  0.99897    
+         XS Component Information:    
+               XS Library File Name     = /nfs/turbo/wrmfluxoe/install/MPACT_20180621/data/mpact51g_71_4.3m2_03262018.fmt
+               XS Library Tag           = 
+               +------------------------------------------+
+               | XS Record Name | Number Density (#/b-cm) |
+               +------------------------------------------+
+                            1001     6.680470572336134E-02
+                            8016     3.340235286168067E-02
+               +-------------- Mixture Data --------------+
+         Number of Materials       =      2
+               +------------------------------------------+
+               | Material ID | Density (g/cc) | Vol Fract |
+               +------------------------------------------+
+                       7     0.99795         0.50000    
+                       1      1.0000         0.50000    
+
+
+         Material Name            = Core Bottom Reflector 2 mixture
+         Material ID Number       =     37
+         Number of Isotopes       =     11
+         Is Material Fluid?       = T
+         Is Material Fuel?        = F
+         Is Material Resonant?    = F
+         Is Material Depletable?  = F
+         Material Temperature (K) =   293.15    
+         Material Density (g/cc)  =   7.8513    
+         XS Component Information:    
+               XS Library File Name     = /nfs/turbo/wrmfluxoe/install/MPACT_20180621/data/mpact51g_71_4.3m2_03262018.fmt
+               XS Library Tag           = 
+               +------------------------------------------+
+               | XS Record Name | Number Density (#/b-cm) |
+               +------------------------------------------+
+                            6000     7.863174000000000E-05
+                           25055     1.237797000000000E-03
+                           15031     5.488560000000000E-05
+                           16000     4.417380000000000E-06
+                           14000     8.574984000000001E-04
+                           28000     7.587459000000000E-03
+                           24000     1.653795000000000E-02
+                           42000     2.953269000000000E-05
+                           26000     5.943564000000000E-02
+                            1001     6.687341144672273E-04
+                            8016     3.343670572336137E-04
+               +-------------- Mixture Data --------------+
+         Number of Materials       =      2
+               +------------------------------------------+
+               | Material ID | Density (g/cc) | Vol Fract |
+               +------------------------------------------+
+                       5      7.9205         0.99000    
+                       1      1.0000         0.10000E-01
+
+
+         Material Name            = assem 1 pin GT type gtube, Insert Names CDG !Control, CRA !Control, with Heights of 1.67000, 7.43000,
+         Material ID Number       =     38
+         Number of Isotopes       =     15
+         Is Material Fluid?       = F
+         Is Material Fuel?        = F
+         Is Material Resonant?    = T
+         Is Material Depletable?  = F
+         Material Temperature (K) =   293.15    
+         Material Density (g/cc)  =   9.6240    
+         XS Component Information:    
+               XS Library File Name     = /nfs/turbo/wrmfluxoe/install/MPACT_20180621/data/mpact51g_71_4.3m2_03262018.fmt
+               XS Library Tag           = 
+               +------------------------------------------+
+               | XS Record Name | Number Density (#/b-cm) |
+               +------------------------------------------+
+                           26000     1.082783956043957E-02
+                           28000     1.497953296703298E-03
+                           24000     3.087481318681321E-03
+                           25055     2.687598901098903E-04
+                           14000     1.246700879120880E-04
+                           15031     7.348000000000007E-06
+                            6000     1.249596406593406E-03
+                           16000     1.562913945054945E-04
+                           27059     3.193553846153849E-05
+                           42000     1.551081318681320E-05
+                           47107     1.876115824175824E-02
+                           47109     1.742947362637362E-02
+                           49000     6.410783626373625E-03
+                           48000     2.114202417582417E-03
+                            8016     1.445420769230769E-03
+               +-------------- Mixture Data --------------+
+         Number of Materials       =      2
+               +------------------------------------------+
+               | Material ID | Density (g/cc) | Vol Fract |
+               +------------------------------------------+
+                      33      7.9204         0.18352    
+                      34      10.007         0.81648    
+
+
+         Material Name            = assem 1 pin GT type gtube, Insert Names CDG !Control, air !Control, with Heights of 1.67000, 7.43000,
+         Material ID Number       =     39
+         Number of Isotopes       =     12
+         Is Material Fluid?       = F
+         Is Material Fuel?        = F
+         Is Material Resonant?    = F
+         Is Material Depletable?  = F
+         Material Temperature (K) =   293.15    
+         Material Density (g/cc)  =   1.4545    
+         XS Component Information:    
+               XS Library File Name     = /nfs/turbo/wrmfluxoe/install/MPACT_20180621/data/mpact51g_71_4.3m2_03262018.fmt
+               XS Library Tag           = 
+               +------------------------------------------+
+               | XS Record Name | Number Density (#/b-cm) |
+               +------------------------------------------+
+                           26000     1.082783956043957E-02
+                           28000     1.497953296703297E-03
+                           24000     3.087481318681320E-03
+                           25055     2.687598901098903E-04
+                           14000     1.246700879120880E-04
+                           15031     7.348000000000004E-06
+                            6000     2.062541758241759E-05
+                           16000     2.865976923076925E-06
+                           27059     3.193553846153848E-05
+                           42000     1.551081318681319E-05
+                            7014     3.193461007714733E-05
+                            8016     8.593123332762259E-06
+               +-------------- Mixture Data --------------+
+         Number of Materials       =      2
+               +------------------------------------------+
+               | Material ID | Density (g/cc) | Vol Fract |
+               +------------------------------------------+
+                      33      7.9204         0.18352    
+                      35     0.11890E-02     0.81648    
+
+
      = Modular Mesh Edits =
 
-            Total Number of Modular Mesh Elem. =                   36
-           Total Number of Flat Source Regions =               199264
+            Total Number of Modular Mesh Elem. =                  504
+           Total Number of Flat Source Regions =              2710224
 
 
      - Fuel/Reflector Map -
 
- Plane     1
+ Plane     7
   F  F  F  F  F  F
   F  F  F  F  F  F
   F  F  F  F  F  F
@@ -1735,80 +1943,160 @@ MPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACT
      - Partition Index -
 
  Plane     1
- 10  9  9 12 12 13
- 10 10 11 11 12 13
-  1  1  2  6 14 14
-  3  1  7  5 14 15
-  3  4  7  8 16 15
-  4  4  8  8 16 16
+  3  3  3  3  3  4
+  3  3  3  3  3  4
+  1  1  1  2  4  4
+  1  1  2  2  4  4
+  1  1  2  2  4  4
+  1  1  2  2  4  4
 
           +------------------------------------------+
           |    Partition Metric    |      Value      |
           +------------------------------------------+
-             Max/Min ratio                 1.56612
-             RMS diff. from optimal       18.93327
-             Edges Cut                    40.00000
-             Exposed Modules              73.00000
+             Max/Min ratio                 1.49504
+             RMS diff. from optimal        7.61997
+             Edges Cut                   692.00000
+             Exposed Modules            1342.00000
 
           +------------------------------------------------------------+
           |    Partition Index    |   # Modules   |  # source regions  |
           +------------------------------------------------------------+
-                      0                     3                14700
-                      1                     1                10784
-                      2                     2                 9800
-                      3                     3                14700
-                      4                     1                10112
-                      5                     1                11120
-                      6                     2                15348
-                      7                     3                14700
-                      8                     2                 9800
-                      9                     3                14700
-                     10                     2                 9800
-                     11                     3                14700
-                     12                     2                 9800
-                     13                     3                14700
-                     14                     2                 9800
-                     15                     3                14700
+                      0                     9                44100
+                      1                     7                34300
+                      2                    10                49000
+                      3                    10                49000
+                      4                     9                44100
+                      5                     7                34300
+                      6                    10                49000
+                      7                    10                49000
+                      8                     9                44100
+                      9                     7                34300
+                     10                    10                49000
+                     11                    10                49000
+                     12                     9                48512
+                     13                     7                47312
+                     14                    10                49000
+                     15                    10                49000
+                     16                     9                49984
+                     17                     7                51280
+                     18                    10                49000
+                     19                    10                49000
+                     20                     9                49984
+                     21                     7                51280
+                     22                    10                49000
+                     23                    10                49000
+                     24                     9                49984
+                     25                     7                51280
+                     26                    10                49000
+                     27                    10                49000
+                     28                     9                49984
+                     29                     7                51280
+                     30                    10                49000
+                     31                    10                49000
+                     32                     9                49984
+                     33                     7                51280
+                     34                    10                49000
+                     35                    10                49000
+                     36                     9                49984
+                     37                     7                51280
+                     38                    10                49000
+                     39                    10                49000
+                     40                     9                49984
+                     41                     7                51280
+                     42                    10                49000
+                     43                    10                49000
+                     44                     9                49984
+                     45                     7                51280
+                     46                    10                49000
+                     47                    10                49000
+                     48                     9                48512
+                     49                     7                47312
+                     50                    10                49000
+                     51                    10                49000
+                     52                     9                49984
+                     53                     7                51280
+                     54                    10                49000
+                     55                    10                49000
 
      = Parallel Decomposition =
 
-                          Number of Spatial Domains =       16
+                          Number of Spatial Domains =       56
                           Number of Angular Domains =        1
                            Number of Energy Domains =        1
-                           Total MPI Processes used =       16
+                           Total MPI Processes used =       56
       Number of OpenMP threads used per MPI process =        1
-                    Total Number of Processors used =       16
+                    Total Number of Processors used =       56
 
  +--------------------------------------------------------------------------------------------------------+
  | World | Space | Angle | Energy |  nMesh  | nAngles | First Mesh | Last Mesh | First Angle | Last Angle |
  | Rank  | Rank  | Rank  |  Rank  |         |         |   Index    |   Index   |    Index    |   Index    |
  +--------------------------------------------------------------------------------------------------------+
-        0       0       0        0         3        32            1           3             1           32
-        1       1       0        0         3        32            4           6             1           32
-        2       2       0        0         3        32            7           9             1           32
-        3       3       0        0         3        32           10          12             1           32
-        4       4       0        0         2        32           13          14             1           32
-        5       5       0        0         2        32           15          16             1           32
-        6       6       0        0         2        32           17          18             1           32
-        7       7       0        0         2        32           19          20             1           32
-        8       8       0        0         2        32           21          22             1           32
-        9       9       0        0         2        32           23          24             1           32
-       10      10       0        0         2        32           25          26             1           32
-       11      11       0        0         2        32           27          28             1           32
-       12      12       0        0         2        32           29          30             1           32
-       13      13       0        0         2        32           31          32             1           32
-       14      14       0        0         2        32           33          34             1           32
-       15      15       0        0         2        32           35          36             1           32
+        0       0       0        0         9        32            1           9             1           32
+        1       1       0        0         9        32           10          18             1           32
+        2       2       0        0         9        32           19          27             1           32
+        3       3       0        0         9        32           28          36             1           32
+        4       4       0        0         9        32           37          45             1           32
+        5       5       0        0         9        32           46          54             1           32
+        6       6       0        0         9        32           55          63             1           32
+        7       7       0        0         9        32           64          72             1           32
+        8       8       0        0         9        32           73          81             1           32
+        9       9       0        0         9        32           82          90             1           32
+       10      10       0        0         9        32           91          99             1           32
+       11      11       0        0         9        32          100         108             1           32
+       12      12       0        0         9        32          109         117             1           32
+       13      13       0        0         9        32          118         126             1           32
+       14      14       0        0         9        32          127         135             1           32
+       15      15       0        0         9        32          136         144             1           32
+       16      16       0        0         9        32          145         153             1           32
+       17      17       0        0         9        32          154         162             1           32
+       18      18       0        0         9        32          163         171             1           32
+       19      19       0        0         9        32          172         180             1           32
+       20      20       0        0         9        32          181         189             1           32
+       21      21       0        0         9        32          190         198             1           32
+       22      22       0        0         9        32          199         207             1           32
+       23      23       0        0         9        32          208         216             1           32
+       24      24       0        0         9        32          217         225             1           32
+       25      25       0        0         9        32          226         234             1           32
+       26      26       0        0         9        32          235         243             1           32
+       27      27       0        0         9        32          244         252             1           32
+       28      28       0        0         9        32          253         261             1           32
+       29      29       0        0         9        32          262         270             1           32
+       30      30       0        0         9        32          271         279             1           32
+       31      31       0        0         9        32          280         288             1           32
+       32      32       0        0         9        32          289         297             1           32
+       33      33       0        0         9        32          298         306             1           32
+       34      34       0        0         9        32          307         315             1           32
+       35      35       0        0         9        32          316         324             1           32
+       36      36       0        0         9        32          325         333             1           32
+       37      37       0        0         9        32          334         342             1           32
+       38      38       0        0         9        32          343         351             1           32
+       39      39       0        0         9        32          352         360             1           32
+       40      40       0        0         9        32          361         369             1           32
+       41      41       0        0         9        32          370         378             1           32
+       42      42       0        0         9        32          379         387             1           32
+       43      43       0        0         9        32          388         396             1           32
+       44      44       0        0         9        32          397         405             1           32
+       45      45       0        0         9        32          406         414             1           32
+       46      46       0        0         9        32          415         423             1           32
+       47      47       0        0         9        32          424         432             1           32
+       48      48       0        0         9        32          433         441             1           32
+       49      49       0        0         9        32          442         450             1           32
+       50      50       0        0         9        32          451         459             1           32
+       51      51       0        0         9        32          460         468             1           32
+       52      52       0        0         9        32          469         477             1           32
+       53      53       0        0         9        32          478         486             1           32
+       54      54       0        0         9        32          487         495             1           32
+       55      55       0        0         9        32          496         504             1           32
 
      = Core Mesh Edits =
 
             Total Number of Assembly Types    =   2
-            Total Number of LatticeMesh Types =   2
-            Total Number of Module Types      =   8
-            Total Number of Pin Types         =   5
-            Total Number of Pin Mesh Types    =   5
+            Total Number of LatticeMesh Types =  10
+            Total Number of Module Types      =  40
+            Total Number of Pin Types         =  22
+            Total Number of Pin Mesh Types    =  22
 
-            Total Core Mass (kg)  =     3.452
+            Total Core Mass (kg)  =   189.309
 
      - Assembly Index Map -
         1   2   3
@@ -1826,7 +2114,7 @@ MPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACT
 ******************************* STATE_0001 EDITS *******************************
 ********************************************************************************
 
-    k-eff = 1.0021249
+    k-eff = 1.0030145
 
          =======* StateType *======= 
                     1 INTEGER(SNK)               :: iState=            1
@@ -1855,7 +2143,7 @@ MPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACT
                    24 REAL(SDK)                  :: thexp_tmod=  293.0000000000000    
                    25 REAL(SDK)                  :: thexp_tclad=  293.0000000000000    
                    26 1-D ARRAY REAL(SDK)        :: void= 0.0000000000000    
-                   27 1-D ARRAY INTEGER(SNK)     :: bank_pos=            0
+                   27 1-D ARRAY INTEGER(SNK)     :: bank_pos=         5806
                    28 1-D ARRAY TYPE(StringType) :: bank_labels=1
                    29 TYPE(StringType)           :: search=keff
                    30 TYPE(StringType)           :: search_bank=D
@@ -1887,52 +2175,132 @@ MPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACTMPACT
  +------------------------------------------------------+
  |  Rank  |  Proc. Mem (MB) | Proc. Mem from MPACT (MB) |
  +------------------------------------------------------+
- | Total  |   8882.5        |   8373.2                  |
+ | Total  |   72347.5       |   80707.0                 |
  +------------------------------------------------------+
- |  Avg   |   555.2         |   523.3                   |
+ |  Avg   |   1291.9        |   1441.2                  |
  +------------------------------------------------------+
- |  Min   |   393.7         |   412.0                   |
+ |  Min   |   1086.3        |   1051.8                  |
  +------------------------------------------------------+
- |  MAX   |   676.1         |   671.5                   |
+ |  MAX   |   1439.6        |   1956.8                  |
  +------------------------------------------------------+
- |      0 |   676.1         |   586.1                   |
- |      1 |   393.7         |   521.1                   |
- |      2 |   471.4         |   412.0                   |
- |      3 |   645.9         |   586.0                   |
- |      4 |   403.4         |   485.1                   |
- |      5 |   414.8         |   533.1                   |
- |      6 |   583.3         |   671.5                   |
- |      7 |   663.6         |   586.1                   |
- |      8 |   495.6         |   412.0                   |
- |      9 |   663.0         |   586.0                   |
- |     10 |   503.9         |   412.0                   |
- |     11 |   663.4         |   586.1                   |
- |     12 |   486.7         |   412.0                   |
- |     13 |   665.3         |   586.1                   |
- |     14 |   492.0         |   412.0                   |
- |     15 |   660.3         |   586.0                   |
+ |      0 |   1236.8        |   1246.9                  |
+ |      1 |   1086.3        |   1051.8                  |
+ |      2 |   1223.1        |   1268.4                  |
+ |      3 |   1240.0        |   1268.5                  |
+ |      4 |   1243.7        |   1249.0                  |
+ |      5 |   1098.9        |   1053.4                  |
+ |      6 |   1236.0        |   1270.7                  |
+ |      7 |   1253.8        |   1270.8                  |
+ |      8 |   1245.8        |   1249.7                  |
+ |      9 |   1097.3        |   1053.9                  |
+ |     10 |   1243.3        |   1271.4                  |
+ |     11 |   1254.7        |   1271.5                  |
+ |     12 |   1335.8        |   1502.1                  |
+ |     13 |   1365.8        |   1802.0                  |
+ |     14 |   1241.3        |   1270.7                  |
+ |     15 |   1252.6        |   1270.8                  |
+ |     16 |   1353.8        |   1561.9                  |
+ |     17 |   1439.2        |   1956.5                  |
+ |     18 |   1236.4        |   1270.7                  |
+ |     19 |   1248.2        |   1270.8                  |
+ |     20 |   1356.9        |   1561.9                  |
+ |     21 |   1439.6        |   1956.5                  |
+ |     22 |   1237.0        |   1270.7                  |
+ |     23 |   1248.0        |   1270.8                  |
+ |     24 |   1356.9        |   1561.9                  |
+ |     25 |   1438.8        |   1956.5                  |
+ |     26 |   1237.1        |   1270.7                  |
+ |     27 |   1248.0        |   1270.8                  |
+ |     28 |   1361.8        |   1561.9                  |
+ |     29 |   1438.1        |   1956.5                  |
+ |     30 |   1236.1        |   1270.7                  |
+ |     31 |   1254.1        |   1270.8                  |
+ |     32 |   1360.7        |   1561.9                  |
+ |     33 |   1436.6        |   1956.5                  |
+ |     34 |   1241.8        |   1270.7                  |
+ |     35 |   1265.7        |   1270.8                  |
+ |     36 |   1359.9        |   1561.9                  |
+ |     37 |   1437.0        |   1956.8                  |
+ |     38 |   1241.8        |   1270.7                  |
+ |     39 |   1252.5        |   1270.8                  |
+ |     40 |   1356.9        |   1561.9                  |
+ |     41 |   1436.7        |   1955.1                  |
+ |     42 |   1240.7        |   1270.7                  |
+ |     43 |   1254.2        |   1270.8                  |
+ |     44 |   1362.0        |   1561.9                  |
+ |     45 |   1437.0        |   1955.1                  |
+ |     46 |   1239.9        |   1270.7                  |
+ |     47 |   1245.8        |   1270.8                  |
+ |     48 |   1336.2        |   1502.1                  |
+ |     49 |   1364.6        |   1800.5                  |
+ |     50 |   1237.0        |   1270.7                  |
+ |     51 |   1255.8        |   1270.8                  |
+ |     52 |   1335.6        |   1550.2                  |
+ |     53 |   1396.8        |   1927.7                  |
+ |     54 |   1227.6        |   1268.4                  |
+ |     55 |   1239.6        |   1268.5                  |
  +------------------------------------------------------+
 
      = Timing results in HH:MM:SS.ff =
 
- +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
- |  Rank  | Total Time | Init. Time | Solve Time | Comm. Time | MOC Solver Calc. | MOC Solver Comm. | Self-Shield Calc. | Self-Shield Comm. |  calcMacro |  CMFD Init |  CMFD Setup |  CMFD Solve |  CMFD Update |
- +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
- |  MAX   |  03:55.06  |  00:12.49  |  03:42.56  |  00:00.41  |  02:10.41        |  00:59.44        |  00:13.72         |  00:05.77         |  00:00.75  |  00:03.40  |  00:01.76   |  00:49.47   |  00:11.97    |
- |      0 |  03:55.06  |  00:12.49  |  03:41.90  |  00:00.30  |  02:10.41        |  00:00.89        |  00:13.51         |  00:00.28         |  00:00.11  |  00:03.40  |  00:01.74   |  00:49.47   |  00:11.97    |
- |      1 |  03:55.06  |  00:12.49  |  03:42.34  |  00:00.10  |  01:11.92        |  00:56.51        |  00:08.53         |  00:05.20         |  00:00.11  |  00:03.40  |  00:01.74   |  00:49.47   |  00:11.97    |
- |      2 |  03:55.06  |  00:12.48  |  03:41.73  |  00:00.41  |  01:28.05        |  00:43.19        |  00:08.96         |  00:04.91         |  00:00.11  |  00:03.40  |  00:01.74   |  00:49.47   |  00:11.97    |
- |      3 |  03:55.06  |  00:12.49  |  03:41.87  |  00:00.31  |  02:09.60        |  00:02.17        |  00:13.52         |  00:00.28         |  00:00.11  |  00:03.40  |  00:01.74   |  00:49.47   |  00:11.97    |
- |      4 |  03:55.06  |  00:12.49  |  03:42.33  |  00:00.15  |  01:09.28        |  00:59.44        |  00:07.94         |  00:05.77         |  00:00.11  |  00:03.40  |  00:01.74   |  00:49.47   |  00:11.97    |
- |      5 |  03:55.06  |  00:12.49  |  03:42.43  |  00:00.07  |  01:12.47        |  00:51.23        |  00:08.48         |  00:04.97         |  00:00.11  |  00:03.40  |  00:01.74   |  00:49.47   |  00:11.97    |
- |      6 |  03:55.06  |  00:12.49  |  03:42.56  |  00:00.03  |  01:54.32        |  00:14.84        |  00:12.54         |  00:01.12         |  00:00.11  |  00:03.40  |  00:01.74   |  00:49.47   |  00:11.97    |
- |      7 |  03:55.06  |  00:12.49  |  03:41.88  |  00:00.31  |  02:10.10        |  00:01.37        |  00:13.51         |  00:00.50         |  00:00.11  |  00:03.40  |  00:01.74   |  00:49.47   |  00:11.97    |
- |      8 |  03:55.06  |  00:12.49  |  03:41.73  |  00:00.41  |  01:26.61        |  00:42.02        |  00:08.93         |  00:04.75         |  00:00.11  |  00:03.40  |  00:01.74   |  00:49.47   |  00:11.97    |
- |      9 |  03:55.06  |  00:12.49  |  03:41.91  |  00:00.31  |  02:07.87        |  00:03.45        |  00:13.41         |  00:00.38         |  00:00.11  |  00:03.40  |  00:01.74   |  00:49.47   |  00:11.97    |
- |     10 |  03:55.06  |  00:12.49  |  03:41.73  |  00:00.40  |  01:28.35        |  00:40.31        |  00:08.94         |  00:04.75         |  00:00.11  |  00:03.40  |  00:01.74   |  00:49.47   |  00:11.97    |
- |     11 |  03:55.06  |  00:12.49  |  03:41.93  |  00:00.31  |  02:08.52        |  00:01.55        |  00:13.43         |  00:00.27         |  00:00.11  |  00:03.40  |  00:01.74   |  00:49.47   |  00:11.97    |
- |     12 |  03:55.06  |  00:12.49  |  03:41.73  |  00:00.41  |  01:26.82        |  00:44.68        |  00:08.99         |  00:05.01         |  00:00.11  |  00:03.40  |  00:01.74   |  00:49.47   |  00:11.97    |
- |     13 |  03:55.06  |  00:12.49  |  03:41.90  |  00:00.33  |  02:08.86        |  00:03.15        |  00:13.46         |  00:00.50         |  00:00.11  |  00:03.40  |  00:01.74   |  00:49.47   |  00:11.97    |
- |     14 |  03:55.06  |  00:12.49  |  03:41.74  |  00:00.41  |  01:25.11        |  00:42.41        |  00:08.95         |  00:04.95         |  00:00.11  |  00:03.40  |  00:01.74   |  00:49.47   |  00:11.97    |
- |     15 |  03:55.06  |  00:12.49  |  03:41.89  |  00:00.32  |  02:08.01        |  00:05.08        |  00:13.72         |  00:00.26         |  00:00.11  |  00:03.40  |  00:01.74   |  00:49.47   |  00:11.97    |
- +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+ +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+ |  Rank  | Total Time | Init. Time | Solve Time | Comm. Time | MOC Solver Calc. | MOC Solver Comm. | Self-Shield Calc. | Self-Shield Comm. | Nodal Solver |  calcMacro |  CMFD Init |  CMFD Setup |  CMFD Solve |  CMFD Update |
+ +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+ |  MAX   |  17:18.14  |  00:30.84  |  16:47.17  |  00:01.24  |  06:48.16        |  01:55.70        |  00:46.20         |  00:15.10         |  03:03.69    |  00:02.25  |  00:08.71  |  00:07.27   |  04:33.37   |  00:19.40    |
+ |      0 |  17:18.13  |  00:30.82  |  16:45.06  |  00:01.02  |  06:01.02        |  00:40.02        |  00:40.88         |  00:05.55         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |      1 |  17:18.10  |  00:30.79  |  16:44.54  |  00:01.24  |  04:51.60        |  01:53.97        |  00:32.22         |  00:14.86         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |      2 |  17:18.09  |  00:30.79  |  16:45.11  |  00:00.90  |  06:35.77        |  00:02.02        |  00:45.78         |  00:00.58         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |      3 |  17:18.11  |  00:30.79  |  16:44.97  |  00:00.91  |  06:33.35        |  00:05.27        |  00:45.58         |  00:00.76         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |      4 |  17:18.12  |  00:30.82  |  16:44.79  |  00:01.03  |  06:01.72        |  00:37.17        |  00:41.33         |  00:05.11         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |      5 |  17:18.07  |  00:30.76  |  16:44.53  |  00:01.24  |  04:49.14        |  01:54.99        |  00:31.91         |  00:15.10         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |      6 |  17:18.07  |  00:30.76  |  16:45.03  |  00:00.90  |  06:32.52        |  00:03.70        |  00:45.79         |  00:00.53         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |      7 |  17:18.08  |  00:30.78  |  16:45.13  |  00:00.90  |  06:34.87        |  00:01.61        |  00:45.45         |  00:00.87         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |      8 |  17:18.13  |  00:30.82  |  16:44.74  |  00:00.78  |  06:02.10        |  00:38.09        |  00:41.32         |  00:05.02         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |      9 |  17:18.10  |  00:30.79  |  16:44.48  |  00:01.05  |  04:49.51        |  01:55.70        |  00:32.30         |  00:14.63         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     10 |  17:18.07  |  00:30.77  |  16:45.12  |  00:00.64  |  06:34.19        |  00:03.65        |  00:45.13         |  00:01.10         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     11 |  17:18.07  |  00:30.76  |  16:45.05  |  00:00.63  |  06:35.10        |  00:02.76        |  00:45.75         |  00:00.49         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     12 |  17:18.11  |  00:30.81  |  16:45.42  |  00:00.79  |  06:23.68        |  00:24.05        |  00:43.38         |  00:03.05         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     13 |  17:18.08  |  00:30.77  |  16:46.52  |  00:00.76  |  05:48.23        |  01:02.84        |  00:39.32         |  00:07.02         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     14 |  17:18.08  |  00:30.77  |  16:45.04  |  00:00.91  |  06:43.87        |  00:02.57        |  00:45.79         |  00:00.76         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     15 |  17:18.07  |  00:30.76  |  16:44.99  |  00:00.93  |  06:42.82        |  00:03.86        |  00:45.40         |  00:01.27         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     16 |  17:18.11  |  00:30.81  |  16:45.81  |  00:00.62  |  06:37.31        |  00:08.51        |  00:45.53         |  00:01.02         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     17 |  17:18.05  |  00:30.75  |  16:46.96  |  00:00.10  |  06:09.10        |  00:39.85        |  00:43.63         |  00:02.55         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     18 |  17:18.09  |  00:30.78  |  16:45.02  |  00:00.93  |  06:40.15        |  00:04.83        |  00:45.83         |  00:00.99         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     19 |  17:18.09  |  00:30.78  |  16:45.14  |  00:00.93  |  06:40.91        |  00:03.90        |  00:45.34         |  00:01.43         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     20 |  17:18.11  |  00:30.81  |  16:45.73  |  00:00.62  |  06:34.77        |  00:14.16        |  00:45.32         |  00:01.22         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     21 |  17:18.01  |  00:30.71  |  16:47.10  |  00:00.10  |  06:13.73        |  00:38.16        |  00:43.69         |  00:02.56         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     22 |  17:18.02  |  00:30.72  |  16:45.21  |  00:00.91  |  06:42.83        |  00:05.07        |  00:45.74         |  00:00.96         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     23 |  17:18.07  |  00:30.76  |  16:45.19  |  00:00.90  |  06:45.40        |  00:02.60        |  00:45.80         |  00:00.93         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     24 |  17:18.05  |  00:30.75  |  16:45.72  |  00:00.61  |  06:39.23        |  00:11.64        |  00:45.45         |  00:01.13         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     25 |  17:18.05  |  00:30.75  |  16:46.94  |  00:00.09  |  06:08.89        |  00:44.42        |  00:43.77         |  00:02.45         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     26 |  17:18.07  |  00:30.77  |  16:45.14  |  00:00.91  |  06:47.00        |  00:02.89        |  00:45.78         |  00:00.95         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     27 |  17:18.06  |  00:30.75  |  16:45.06  |  00:00.91  |  06:43.31        |  00:06.22        |  00:45.63         |  00:01.05         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     28 |  17:18.09  |  00:30.78  |  16:45.75  |  00:00.62  |  06:31.45        |  00:17.66        |  00:44.88         |  00:01.93         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     29 |  17:18.07  |  00:30.76  |  16:46.98  |  00:00.10  |  06:10.50        |  00:40.97        |  00:43.23         |  00:03.37         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     30 |  17:18.05  |  00:30.75  |  16:44.97  |  00:00.93  |  06:39.95        |  00:07.29        |  00:45.58         |  00:01.54         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     31 |  17:18.07  |  00:30.76  |  16:44.98  |  00:00.91  |  06:46.06        |  00:02.04        |  00:46.20         |  00:00.76         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     32 |  17:18.14  |  00:30.84  |  16:45.73  |  00:00.62  |  06:30.83        |  00:21.61        |  00:45.05         |  00:01.69         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     33 |  17:18.10  |  00:30.79  |  16:47.06  |  00:00.10  |  06:11.52        |  00:43.48        |  00:44.45         |  00:01.88         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     34 |  17:18.07  |  00:30.77  |  16:44.97  |  00:00.88  |  06:48.16        |  00:03.49        |  00:45.64         |  00:01.27         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     35 |  17:18.07  |  00:30.76  |  16:45.02  |  00:00.93  |  06:45.71        |  00:04.44        |  00:46.01         |  00:00.84         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     36 |  17:18.12  |  00:30.81  |  16:45.81  |  00:00.65  |  06:27.80        |  00:12.03        |  00:44.91         |  00:01.06         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     37 |  17:18.08  |  00:30.77  |  16:46.89  |  00:00.14  |  06:05.50        |  00:37.08        |  00:43.08         |  00:02.57         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     38 |  17:18.10  |  00:30.80  |  16:44.93  |  00:00.93  |  06:37.16        |  00:01.42        |  00:45.29         |  00:00.83         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     39 |  17:18.08  |  00:30.78  |  16:44.96  |  00:00.97  |  06:33.03        |  00:05.86        |  00:45.43         |  00:00.75         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     40 |  17:18.11  |  00:30.81  |  16:45.70  |  00:00.66  |  06:28.48        |  00:11.82        |  00:44.88         |  00:00.64         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     41 |  17:18.05  |  00:30.75  |  16:47.17  |  00:00.14  |  06:05.70        |  00:37.29        |  00:42.69         |  00:02.60         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     42 |  17:18.07  |  00:30.76  |  16:44.99  |  00:00.96  |  06:35.10        |  00:04.14        |  00:44.91         |  00:00.86         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     43 |  17:18.10  |  00:30.78  |  16:45.06  |  00:00.96  |  06:37.37        |  00:01.74        |  00:45.01         |  00:00.74         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     44 |  17:18.11  |  00:30.81  |  16:45.69  |  00:00.67  |  06:27.91        |  00:11.55        |  00:44.86         |  00:01.08         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     45 |  17:18.02  |  00:30.72  |  16:46.91  |  00:00.14  |  06:05.42        |  00:36.82        |  00:43.22         |  00:02.44         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     46 |  17:18.03  |  00:30.73  |  16:44.97  |  00:00.91  |  06:35.05        |  00:03.15        |  00:45.32         |  00:00.76         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     47 |  17:18.07  |  00:30.76  |  16:45.01  |  00:00.97  |  06:33.48        |  00:04.82        |  00:44.97         |  00:01.17         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     48 |  17:18.09  |  00:30.79  |  16:45.52  |  00:00.90  |  06:16.35        |  00:21.51        |  00:43.22         |  00:02.64         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     49 |  17:18.04  |  00:30.74  |  16:46.42  |  00:00.77  |  05:41.47        |  00:59.48        |  00:38.99         |  00:06.75         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     50 |  17:18.07  |  00:30.77  |  16:44.99  |  00:00.93  |  06:31.82        |  00:04.87        |  00:44.79         |  00:01.21         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     51 |  17:18.06  |  00:30.75  |  16:45.15  |  00:00.93  |  06:34.63        |  00:01.74        |  00:45.45         |  00:00.49         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     52 |  17:18.09  |  00:30.78  |  16:45.57  |  00:00.85  |  06:15.36        |  00:26.93        |  00:43.35         |  00:02.38         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     53 |  17:18.08  |  00:30.78  |  16:46.93  |  00:00.63  |  05:50.43        |  00:53.45        |  00:40.17         |  00:05.34         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     54 |  17:18.05  |  00:30.75  |  16:44.92  |  00:00.94  |  06:38.96        |  00:02.39        |  00:45.20         |  00:00.70         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ |     55 |  17:18.07  |  00:30.76  |  16:44.99  |  00:00.94  |  06:40.05        |  00:01.25        |  00:45.01         |  00:00.91         |  03:03.55    |  00:00.35  |  00:08.68  |  00:05.64   |  04:33.29   |  00:17.57    |
+ +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

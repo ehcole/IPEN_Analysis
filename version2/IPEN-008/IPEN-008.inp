@@ -160,8 +160,8 @@
  cell F3	0.365 0.425 0.42873 0.49037 / air ST air CDG !void section of fuel rod
 
 !guide tube
- cell GT	0.565 0.6 / air GTC
- cell G2        0.565 0.6 / mod GTC
+ cell GT	0.565 0.6 / mod GTC
+ cell G2        0.565 0.6 / H2O GTC
       	    
 !water
  cell WW	0.6				  / H2O
@@ -280,7 +280,8 @@ axial 1 0.0
    ray_spacing           0.04
    shield_ray_spacing    0.04
    res_up_scatter        false
-   power_edit		 fission	 
+   power_edit            fission
+
 
 
    
