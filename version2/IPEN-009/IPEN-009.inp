@@ -145,7 +145,7 @@ axial 1 0.0
    ray_spacing           0.04
    shield_ray_spacing    0.04
    res_up_scatter        false
-   power_edit          fission
+!   power_edit          fission
    axial_buckling      0.0002494
    
 !MSED
