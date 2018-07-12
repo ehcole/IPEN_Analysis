@@ -250,6 +250,7 @@ axial 1 0.0
 
 [STATE]
  sym   full
+ boron 0
  power 100.0
  flow  100.0
  tinlet 20 C
