@@ -1,0 +1,19 @@
+#!/bin/sh
+#### PBS preamble
+#PBS -N MB01-19
+
+#PBS -M ehcole@umich.edu
+#PBS -m ae
+
+#PBS -l procs=16,walltime=01:00:00 
+#PBS -V
+
+#PBS -A wrm_fluxoe
+#PBS -q fluxoe
+#PBS -l qos=flux
+#### End PBS preamble
+
+if [ -n "$PBS_O_WORKDIR" ]; then cd $PBS_O_WORKDIR; fi
+
+react2xml.pl IPEN-019.inp IPEN-019.xml
+mpirun MPACT.exe IPEN-019.xml

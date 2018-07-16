@@ -1,0 +1,179 @@
+
+
+===============================================================================
+                                MPACT v2.1.0      (  rev: 7694   SHA1: 83243c6)
+                                                  (built: 16:09:35 Jun 21 2018)
+           Executing case: IPEN-015
+           by ehcole on nyx1044.arc-ts.umich.edu at 13:36:49, July 16, 2018...
+
+===============================================================================
+   00:00.16 Processing Input...
+   00:00.83 Processing XS Libraries...
+   00:01.59 Generating Materials...
+   00:01.62 Generating Reactor Geometry...
+   00:01.64 Generating Reactor Mesh...
+   00:01.87 Initializing Parallel Environment...
+   00:02.06 Setting up angular quadrature...
+   00:02.06 Initializing mesh...
+   00:02.12 Generating Input Edits...
+   00:02.41 Initializing Control Rods...
+                Setting up modular rays...
+                Performing ray tracing...
+   00:04.10 Initializing Base MOC Sweeper...
+                Setting up long rays...
+   00:04.28 Initializing PS 2D1D Sweeper...
+                      ...with LFLAT axial TL spatial treatment
+                      ...with ISO axial TL angular treatment
+                      ...with axial TL splitting
+                 -Two-Node NEM is being used
+   00:11.23 Initializing Multi-group Fixed Source Solver...
+   00:11.25 Initializing Eigenvalue Solver...
+                Adding eigenvalue accelerator...
+                 -adCMFD acceleration is being used (MG LS, Node-Major)
+                      ...with P0 boundary update
+                      ...with flat prolongation
+                      ...not using angle decomp processors
+            Setting PETSc Linear Solver to GMRES
+   00:17.67 Initializing Feedback Solver...
+                Setting up modular rays...
+                Performing ray tracing...
+   00:18.63 Initializing Base MOC Sweeper...
+                Setting up long rays...
+   00:18.83 Initializing PS 2D1D Sweeper...
+                      ...with LFLAT axial TL spatial treatment
+                      ...with ISO axial TL angular treatment
+                      ...with axial TL splitting
+                 -Two-Node NEM is being used
+   00:22.65 Initializing MultiState Solver...
+   00:23.40 Solving State 1/1...
+                Moving control rod banks
+   00:23.44 Calculating Macroscopic XS
+   00:24.10 Using TCP0 in All Regions...
+   00:24.10 Calculating Equivalence XS...
+            Solving Subgroup FSP...
+              Running Batch   1/5 (1-52)
+                    5    2.05450E-12
+              Running Batch   2/5 (53-105)
+                    6    1.89738E-10
+              Running Batch   3/5 (106-158)
+                    5    1.26770E-08
+              Running Batch   4/5 (159-211)
+                    5    6.33842E-12
+              Running Batch   5/5 (212-264)
+                    5    6.38933E-14
+   01:21.15 Calculating Macroscopic XS
+   01:21.89 Using TCP0 in All Regions...
+   01:21.89 Performing Eigenvalue Calculation...
+   01:21.89      iter    keff     norm_keff    norm_fissrc
+   01:21.89         0  1.0000000 1.000000E-06 5.000000E-05
+            MG-CMFD   10      797  0.9879990 3.405670E-06
+            MG-CMFD   11       65    0.9879981   1.808127E-06
+            NODAL      5          1           2.828458E-03
+            MG-INNER   1          1           8.103975E-02
+   02:16.89         1  0.9879981 1.200192E-02 2.609971E-01
+            MG-CMFD    7      549    1.0006722   2.087795E-04
+            NODAL      5          1           1.427854E-03
+            MG-INNER   1          1           7.933010E-03
+   03:00.14         2  1.0006722 1.267417E-02 3.071807E-02
+            MG-CMFD   10      741    0.9969879   1.132568E-04
+            NODAL      5          1           3.028183E-04
+            MG-INNER   1          1           3.071216E-03
+   03:49.76         3  0.9969879 3.684358E-03 2.383858E-02
+            MG-CMFD    8      584    0.9975125   2.868942E-04
+            NODAL      5          1           1.293248E-04
+            MG-INNER   1          1           9.262050E-04
+   04:33.89         4  0.9975125 5.246253E-04 7.979669E-03
+            MG-CMFD    8      572    0.9980449   3.169213E-04
+            NODAL      5          1           7.885613E-05
+            MG-INNER   1          1           6.803848E-04
+   05:15.86         5  0.9980449 5.324099E-04 5.657973E-03
+            MG-CMFD    6      427    0.9985371   9.054917E-04
+            NODAL      5          1           4.416370E-05
+            MG-INNER   1          1           2.725136E-04
+   05:52.78         6  0.9985371 4.921479E-04 2.378108E-03
+            MG-CMFD    6      421    0.9983415   8.418486E-04
+            NODAL      5          1           3.106603E-05
+            MG-INNER   1          1           2.338702E-04
+   06:28.04         7  0.9983415 1.955908E-04 1.964037E-03
+            MG-CMFD    5      345    0.9983755   1.491809E-03
+            NODAL      5          1           2.164681E-05
+            MG-INNER   1          1           1.064252E-04
+   07:00.81         8  0.9983755 3.406116E-05 8.928023E-04
+            MG-CMFD    5      339    0.9982261   1.185265E-03
+            NODAL      5          1           1.670451E-05
+            MG-INNER   1          1           9.142602E-05
+   07:35.77         9  0.9982261 1.494243E-04 7.247995E-04
+            MG-CMFD    3      209    0.9982013   5.286695E-03
+            NODAL      5          1           1.296023E-05
+            MG-INNER   1          1           5.114809E-05
+   08:04.25        10  0.9982013 2.486134E-05 4.034215E-04
+            MG-CMFD    4      265    0.9981178   2.094655E-03
+            NODAL      5          1           1.037851E-05
+            MG-INNER   1          1           4.097318E-05
+   08:34.35        11  0.9981178 8.345186E-05 3.099325E-04
+            MG-CMFD    3      200    0.9980880   4.686742E-03
+            NODAL      5          1           8.373341E-06
+            MG-INNER   1          1           2.759741E-05
+   09:03.43        12  0.9980880 2.983492E-05 2.141105E-04
+            MG-CMFD    3      196    0.9980430   2.829615E-03
+            NODAL      5          1           6.813211E-06
+            MG-INNER   1          1           2.009952E-05
+   09:31.37        13  0.9980430 4.499148E-05 1.453498E-04
+            MG-CMFD    3      195    0.9980209   2.658601E-03
+            NODAL      5          1           5.575677E-06
+            MG-INNER   1          1           1.548198E-05
+   09:59.23        14  0.9980209 2.211491E-05 1.197902E-04
+            MG-CMFD    3      189    0.9979969   1.526088E-03
+            NODAL      5          1           4.572797E-06
+            MG-INNER   1          1           1.056478E-05
+   10:26.35        15  0.9979969 2.392550E-05 7.415116E-05
+            MG-CMFD    3      188    0.9979820   1.482985E-03
+            NODAL      5          1           3.765231E-06
+            MG-INNER   1          1           8.812790E-06
+   10:53.75        16  0.9979820 1.492472E-05 6.758230E-05
+            MG-CMFD    3      183    0.9979692   8.505735E-04
+            NODAL      5          1           3.100973E-06
+            MG-INNER   1          1           5.812668E-06
+   11:21.43        17  0.9979692 1.285304E-05 3.992453E-05
+            MG-CMFD    3      181    0.9979598   8.341143E-04
+            NODAL      5          1           2.561914E-06
+            MG-INNER   1          1           5.084901E-06
+   11:49.17        18  0.9979598 9.383155E-06 3.848471E-05
+            MG-CMFD    2      122    0.9979526   1.132228E-03
+            NODAL      5          1           2.115415E-06
+            MG-INNER   1          1           3.278623E-06
+   12:14.46        19  0.9979526 7.189352E-06 2.162349E-05
+            MG-CMFD    2      120    0.9979469   1.195144E-03
+            NODAL      5          1           1.750800E-06
+            MG-INNER   1          1           2.960714E-06
+   12:39.50        20  0.9979469 5.714732E-06 2.189082E-05
+            MG-CMFD    2      118    0.9979429   7.765205E-04
+            NODAL      5          1           1.447877E-06
+            MG-INNER   1          1           1.963664E-06
+   13:04.20        21  0.9979429 3.931630E-06 1.320043E-05
+            MG-CMFD    2      116    0.9979395   7.171754E-04
+            NODAL      5          1           1.199859E-06
+            MG-INNER   1          1           1.763101E-06
+   13:30.09        22  0.9979395 3.419762E-06 1.280084E-05
+            MG-CMFD    2      114    0.9979373   4.637931E-04
+            NODAL      5          1           9.935146E-07
+            MG-INNER   1          1           1.183289E-06
+   13:54.55        23  0.9979373 2.233897E-06 7.827671E-06
+            MG-CMFD    2      112    0.9979353   4.171820E-04
+            NODAL      5          1           8.242379E-07
+            MG-INNER   1          1           1.058001E-06
+   14:18.89        24  0.9979353 2.020737E-06 7.464929E-06
+            MG-CMFD    2      110    0.9979340   2.744927E-04
+            NODAL      5          1           6.832855E-07
+            MG-INNER   1          1           7.243575E-07
+   14:43.66        25  0.9979340 1.289002E-06 4.667965E-06
+            MG-CMFD    2      108    0.9979328   2.430503E-04
+            NODAL      5          1           5.677265E-07
+            MG-INNER   1          1           6.425294E-07
+   15:08.71        26  0.9979328 1.186099E-06 4.371361E-06
+            MG-CMFD    2      106    0.9979320   1.627631E-04
+            NODAL      5          1           4.714299E-07
+            MG-INNER   1          1           4.499023E-07
+   15:32.91        27  0.9979320 7.534872E-07 2.798785E-06
+   15:32.91 Convergence criteria satisfied
+   15:42.17 Finished

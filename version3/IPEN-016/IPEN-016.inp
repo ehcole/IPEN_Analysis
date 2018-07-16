@@ -107,7 +107,7 @@
  F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
  F2 F2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 F2 
  F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
- F2 F2 F2 G2 F2 F2 F2 GT F2 F2 F2 GT F2 F2 
+ F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 
  F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
  F2 F2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 F2 
  F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
@@ -356,66 +356,37 @@
  power 100.0
  flow  100.0
  tinlet 22.0 C !21.13 C
- modden 1
+ tfuel 600 K
+ modden 1.0
  boron 0.082
  rodbank 1 4260 !pg 292 exp 4
 	 2 4260
  edit fsr_flux_2g fsr_flux_power
 
 [STATE]
- sym   full
- power 100.0
- flow  100.0
- tinlet 22.0 C !21.07 C
- modden 1
  boron 6.067
  rodbank 1 4260
 	 2 4403
- edit fsr_flux_2g fsr_flux_power
 
 [STATE]
- sym   full
- power 100.0
- flow  100.0
- tinlet 22.0 C !21.19 C
- modden 1
  boron 11.028
  rodbank 1 4260
 	 2 4538
- edit fsr_flux_2g fsr_flux_power
  
 [STATE]
- sym   full
- power 100.0
- flow  100.0
- tinlet 22.0 C !21.08 C
- modden 1
  boron 21.980
  rodbank 1 4260
 	 2 4816
- edit fsr_flux_2g fsr_flux_power
 
 [STATE]
- sym   full
- power 100.0
- flow  100.0
- tinlet 22.0 C !21.08 C
- modden 1
  boron 43.230
  rodbank 1 4260
 	 2 5487
- edit fsr_flux_2g fsr_flux_power
 
 [STATE]
- sym   full
- power 100.0
- flow  100.0
- tinlet 22.0 C !21.08 C
- modden 1
  boron 95.742
  rodbank 1 6533
 	 2 5679
- edit fsr_flux_2g fsr_flux_power
 
 [EDITS]
   axial_edit_bounds

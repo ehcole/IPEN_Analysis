@@ -253,6 +253,7 @@ axial 1 0.0
  power 100.0
  flow  100.0
  tinlet 20 C
+ tfuel 600 K
  boron 0
 ! rodbank 1 3972
  rodbank 1 5806

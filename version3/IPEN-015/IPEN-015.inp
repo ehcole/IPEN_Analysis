@@ -120,7 +120,7 @@
  F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
  F2 F2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 F2 
  F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
- F2 F2 F2 G2 F2 F2 F2 GT F2 F2 F2 GT F2 F2 
+ F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 
  F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
  F2 F2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 F2 
  F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
@@ -318,10 +318,10 @@
  cell G2        0.565 0.6 / H2O GTC
       	    
 !water
- cell WW	0.6				  / H2O
+ cell WW	0.7499				  / H2O
 
  
- cell SS	0.42447 0.42873 0.49037 0.7 / REF REF REF REF
+ cell SS	0.42447 0.42873 0.49037 0.7499 / REF REF REF REF
  axial S1 0.0
        S11 9.10
        S12 63.94
@@ -367,8 +367,8 @@
 [CONTROL]
  title "control rods"
  npin 14
-! stroke 80.3 8030
- stroke 80.3 10000
+ stroke 80.3 8030
+! stroke 80.3 10000
 
  cell 1 0.49037 / CDG !bottom of rod is same material as cladding--table 3.6-1 (pg 306)
  cell 2 0.416 0.42873 0.49037 / CRA air CDG
@@ -451,13 +451,15 @@
  power 100.0
  flow  100.0
  tinlet 21.13 C
- boron 0
- rodbank 1 4825 !pg 293 exp 4
-	 2 4825
+ tfuel 600 K
+ modden 1.0
+ rodbank 1 4205
+ 	 2 4205
  edit fsr_flux_2g fsr_flux_power 
 
 [EDITS]
   axial_edit_bounds
+    4.50
     9.1  !BAF
     15.955
     22.810
@@ -468,33 +470,21 @@
     57.085
     63.94 !TAF
     69.34
+    75.65
     80.30
 
-![MPACT]
- !  scattering		 P0  !
-  ! jagged                false
-   !refl_no_added_modules false
-   !num_space             56 
-   !par_method            GRAPH 
-   !graph_part_method     REB
-   !ray_spacing           0.04
-   !shield_ray_spacing    0.04
-   !res_up_scatter        false
-   !num_iters		 3  ! 
-   !moc_kernel		 1g !
-
 [MPACT]
-   scattering		 P0
    jagged                false
    refl_no_added_modules false
-   num_space             64
+   num_space             60 !76
    par_method            GRAPH
    graph_part_method     REB
    ray_spacing           0.04
    shield_ray_spacing    0.04
    res_up_scatter        false
-   nodal_method 	 hysp3
-   
+   meshing_method        matbound
+   nodal_method          nem
+
 !MSED
 !   cmfd                          msed
 !   cmfd_shift_method             none
