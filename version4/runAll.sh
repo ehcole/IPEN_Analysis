@@ -2,7 +2,7 @@
 
 for dir in `ls`
   do
-    if [ $dir != submitAll.sh ]
+    if [ $dir != runAll.sh ]
       then
 	cd $dir
 	./submitAll.sh
