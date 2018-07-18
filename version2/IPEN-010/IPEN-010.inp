@@ -132,6 +132,7 @@ axial 1 0.0
  tinlet 20 C
  tfuel 600 K
  rodbank 1 1
+ modden 1
  edit fsr_flux_2g fsr_flux_power
 
 [MPACT]
@@ -144,7 +145,7 @@ axial 1 0.0
    shield_ray_spacing    0.04
    res_up_scatter        false
 !   power_edit          fission
-   axial_buckling      0.0002494
+   axial_buckling      0.002494
 
    
 !MSED

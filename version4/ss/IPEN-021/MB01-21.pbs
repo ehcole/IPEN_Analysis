@@ -3,7 +3,7 @@
 #PBS -N MB01-21
 
 #PBS -M ehcole@umich.edu
-#PBS -m ae
+#PBS -m a
 
 #PBS -l procs=16,walltime=01:00:00 
 #PBS -V

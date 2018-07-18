@@ -18,3 +18,24 @@ if [ -n "$PBS_O_WORKDIR" ]; then cd $PBS_O_WORKDIR; fi
 
 react2xml.pl IPEN-015.inp IPEN-015.xml
 mpirun -np 60 MPACT.exe IPEN-015.xml
+
+react2xml.pl IPEN-015-1.inp IPEN-015-1.xml
+mpirun -np 60 MPACT.exe IPEN-015-1.xml
+
+#react2xml.pl IPEN-015-2.inp IPEN-015-2.xml
+#mpirun -np 60 MPACT.exe IPEN-015-2.xml
+
+#react2xml.pl IPEN-015-3.inp IPEN-015-3.xml
+#mpirun -np 60 MPACT.exe IPEN-015-3.xml
+
+#react2xml.pl IPEN-015-4.inp IPEN-015-4.xml
+#mpirun -np 60 MPACT.exe IPEN-015-4.xml
+
+react2xml.pl IPEN-015-5.inp IPEN-015-5.xml
+mpirun -np 60 MPACT.exe IPEN-015-5.xml
+
+#react2xml.pl IPEN-015-6.inp IPEN-015-6.xml
+#mpirun -np 60 MPACT.exe IPEN-015-6.xml
+
+#react2xml.pl IPEN-015-7.inp IPEN-015-7.xml
+#mpirun -np 60 MPACT.exe IPEN-015-7.xml

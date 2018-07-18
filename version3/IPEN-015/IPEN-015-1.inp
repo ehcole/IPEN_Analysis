@@ -1,0 +1,503 @@
+[CORE]
+  include materials-3.ini
+  size 6
+  apitch 21.0
+  height 80.3
+  rated 0.0001 1
+  lower_plate GP 2.2 0.99
+
+  lower_ref H2O 30.0 0.5
+
+  assm_map
+  
+     R2
+     R1 S1 C1 
+     R1	C2 S2 
+     R3
+    
+  crd_map
+       -
+       - - 1 
+       - 2 -
+       - 
+      
+
+  crd_bank
+       -
+       - - 1 
+       - 2 -
+       - 
+     
+
+
+  core_shape
+    0 0 0 0 0 0
+    0 1 0 0 0 0
+    0 1 1 1 0 0
+    0 1 1 1 0 0
+    0 1 0 0 0 0	
+    0 0	0 0 0 0	
+
+[ASSEMBLY]
+ title "IPEN/MB-01 28x26" 
+ npin 14	   !pg 305
+ ppitch 1.5	   !pg 305
+
+
+ fuel UO2 0.0 0.0 / 0.0 U-234 7.8462E-06 !table 3.6-1 pg 306
+      	      	    	U-235 9.9924E-04
+			U-238 2.1694E-02
+			 O-16 4.5489E-02
+
+ rodmap S11
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 F1 F1 F1 G2 F1 F1 F1 G2 F1 F1 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 F1 G2 F1 F1 F1 G2 F1 F1 F1 G2 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 F1 F1 F1 G2 F1 F1 F1 G2 F1 F1 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 F1 G2 F1 F1 F1 G2 F1 F1 F1 G2 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 F1 F1 F1 G2 F1 F1 F1 G2 F1 F1 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1  
+ 
+
+ rodmap C11
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 F1 F1 GT F1 F1 F1 GT F1 F1 F1 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 GT F1 F1 F1 GT F1 F1 F1 GT F1 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 F1 F1 GT F1 F1 F1 GT F1 F1 F1 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 GT F1 F1 F1 GT F1 F1 F1 GT F1 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 F1 F1 GT F1 F1 F1 GT F1 F1 F1 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ 
+ rodmap C21
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1
+ F1 F1 F1 F1 F1 GT F1 F1 F1 GT F1 F1 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 F1 GT F1 F1 F1 GT F1 F1 F1 GT F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 F1 F1 F1 GT F1 F1 F1 GT F1 F1 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 F1 GT F1 F1 F1 GT F1 F1 F1 GT F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 F1 F1 F1 GT F1 F1 F1 GT F1 F1 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW
+
+ rodmap S21
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 F1 F1 G2 F1 F1 F1 G2 F1 F1 F1 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 G2 F1 F1 F1 G2 F1 F1 F1 G2 F1 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 F1 F1 G2 F1 F1 F1 G2 F1 F1 F1 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 G2 F1 F1 F1 G2 F1 F1 F1 G2 F1 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 F1 F1 G2 F1 F1 F1 G2 F1 F1 F1 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 F1 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+
+ rodmap S12
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+
+ rodmap C12
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 F2 F2 GT F2 F2 F2 GT F2 F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 GT F2 F2 F2 GT F2 F2 F2 GT F2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 F2 F2 GT F2 F2 F2 GT F2 F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 GT F2 F2 F2 GT F2 F2 F2 GT F2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 F2 F2 GT F2 F2 F2 GT F2 F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+
+ rodmap C22
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 GT F2 F2 F2 GT F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 F2 GT F2 F2 F2 GT F2 F2 F2 GT F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 GT F2 F2 F2 GT F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 F2 GT F2 F2 F2 GT F2 F2 F2 GT F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 GT F2 F2 F2 GT F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+
+ rodmap S22
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2
+ F2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+
+ rodmap S13
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 F3 F3 F3 G2 F3 F3 F3 G2 F3 F3 F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 F3 G2 F3 F3 F3 G2 F3 F3 F3 G2 F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 F3 F3 F3 G2 F3 F3 F3 G2 F3 F3 F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 F3 G2 F3 F3 F3 G2 F3 F3 F3 G2 F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 F3 F3 F3 G2 F3 F3 F3 G2 F3 F3 F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+
+ rodmap C13
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 F3 F3 GT F3 F3 F3 GT F3 F3 F3 F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 GT F3 F3 F3 GT F3 F3 F3 GT F3 F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 F3 F3 GT F3 F3 F3 GT F3 F3 F3 F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 GT F3 F3 F3 GT F3 F3 F3 GT F3 F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 F3 F3 GT F3 F3 F3 GT F3 F3 F3 F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+
+ rodmap C23
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 F3 F3 F3 GT F3 F3 F3 GT F3 F3 F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 F3 GT F3 F3 F3 GT F3 F3 F3 GT F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 F3 F3 F3 GT F3 F3 F3 GT F3 F3 F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 F3 GT F3 F3 F3 GT F3 F3 F3 GT F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 F3 F3 F3 GT F3 F3 F3 GT F3 F3 F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+
+ rodmap S23
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 F3 F3 G2 F3 F3 F3 G2 F3 F3 F3 F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 G2 F3 F3 F3 G2 F3 F3 F3 G2 F3 F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 F3 F3 G2 F3 F3 F3 G2 F3 F3 F3 F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 G2 F3 F3 F3 G2 F3 F3 F3 G2 F3 F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 F3 F3 G2 F3 F3 F3 G2 F3 F3 F3 F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 F3 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW
+
+ rodmap ref1
+ WW WW WW WW WW WW WW WW SS SS SS SS SS SS
+ WW WW WW WW WW WW WW WW SS SS SS SS SS SS
+ WW WW WW WW WW WW WW WW SS SS SS SS SS SS
+ WW WW WW WW WW WW WW WW SS SS SS SS SS SS
+ WW WW WW WW WW WW WW WW SS SS SS SS SS SS
+ WW WW WW WW WW WW WW WW SS SS SS SS SS SS
+ WW WW WW WW WW WW WW WW SS SS SS SS SS SS
+ WW WW WW WW WW WW WW WW SS SS SS SS SS SS
+ WW WW WW WW WW WW WW WW SS SS SS SS SS SS
+ WW WW WW WW WW WW WW WW SS SS SS SS SS SS
+ WW WW WW WW WW WW WW WW SS SS SS SS SS SS
+ WW WW WW WW WW WW WW WW SS SS SS SS SS SS
+ WW WW WW WW WW WW WW WW SS SS SS SS SS SS
+ WW WW WW WW WW WW WW WW SS SS SS SS SS SS
+
+ rodmap ref2
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW
+ WW WW WW WW WW WW WW WW SS SS SS SS SS SS
+ WW WW WW WW WW WW WW WW SS SS SS SS SS SS
+ WW WW WW WW WW WW WW WW SS SS SS SS SS SS
+
+ rodmap ref3
+ WW WW WW WW WW WW WW WW SS SS SS SS SS SS
+ WW WW WW WW WW WW WW WW SS SS SS SS SS SS
+ WW WW WW WW WW WW WW WW SS SS SS SS SS SS
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+
+ rodmap WW
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW 
+ 
+!cells. data from figure 3.6-2 pg 304
+!fuel rod
+ cell F1	0.4235 0.42873 0.49037 / AMA air CDG !alumina section of fuel rod. 	 
+ cell F2	0.42447 0.42873 0.49037 / UO2 air CDG !UO2 section of fuel rod
+ cell F3	0.365 0.425 0.42873 0.49037 / air ST air CDG !void section of fuel rod
+
+
+!guide tube
+ cell GT	0.565 0.6 / mod GTC
+ cell G2        0.565 0.6 / H2O GTC
+      	    
+!water
+ cell WW	0.7499				  / H2O
+
+ 
+ cell SS	0.42447 0.42873 0.49037 0.7499 / REF REF REF REF
+
+ axial S1 0.0
+       S11 9.10
+       S12 63.94
+       S11 69.34
+       S13 80.30
+ 
+ axial C1 0.0
+       C11 9.10
+       C12 63.94
+       C11 69.34
+       C13 80.30
+ 
+ axial C2 0.0
+       C21 9.10
+       C22 63.94
+       C21 69.34
+       C23 80.30
+
+ axial S2 0.0
+       S21 9.10
+       S22 63.94
+       S21 69.34
+       S23 80.30
+
+ axial R1 0.0
+       WW   4.5
+       ref1 9.1
+       ref1 75.65
+       WW   80.3
+
+ axial R2 0.0
+       WW   4.5
+       ref2 9.1
+       ref2 75.65
+       WW   80.3
+
+ axial R3 0.0
+       WW   4.5
+       ref3 9.1
+       ref3 75.65
+       WW   80.3 
+
+[CONTROL]
+ title "control rods"
+ npin 14
+ stroke 80.3 8030
+! stroke 80.3 10000
+
+ cell 1 0.49037 / CDG !bottom of rod is same material as cladding--table 3.6-1 (pg 306)
+ cell 2 0.416 0.42873 0.49037 / CRA air CDG
+
+ rodmap C11
+ - - - - - - - - - - - - - - 
+ - - - - - - - - - - - - - - 
+ - - - - - - - - - - - - - - 
+ - - - - 1 - - - 1 - - - - -
+ - - - - - - - - - - - - - - 
+ - - 1 - - - 1 - - - 1 - - -
+ - - - - - - - - - - - - - - 
+ - - - - 1 - - - 1 - - - - -
+ - - - - - - - - - - - - - - 
+ - - 1 - - - 1 - - - 1 - - -
+ - - - - - - - - - - - - - - 
+ - - - - 1 - - - 1 - - - - - 
+ - - - - - - - - - - - - - - 
+ - - - - - - - - - - - - - - 
+
+ rodmap C21
+ - - - - - - - - - - - - - - 
+ - - - - - - - - - - - - - - 
+ - - - - - 1 - - - 1 - - - - 
+ - - - - - - - - - - - - - - 
+ - - - 1 - - - 1 - - - 1 - - 
+ - - - - - - - - - - - - - - 
+ - - - - - 1 - - - 1 - - - - 
+ - - - - - - - - - - - - - - 
+ - - - 1 - - - 1 - - - 1 - - 
+ - - - - - - - - - - - - - - 
+ - - - - - 1 - - - 1 - - - -
+ - - - - - - - - - - - - - -
+ - - - - - - - - - - - - - -
+ - - - - - - - - - - - - - - 
+ 
+ rodmap C12
+ - - - - - - - - - - - - - - 
+ - - - - - - - - - - - - - - 
+ - - - - - - - - - - - - - - 
+ - - - - 2 - - - 2 - - - - -
+ - - - - - - - - - - - - - - 
+ - - 2 - - - 2 - - - 2 - - -
+ - - - - - - - - - - - - - - 
+ - - - - 2 - - - 2 - - - - -
+ - - - - - - - - - - - - - - 
+ - - 2 - - - 2 - - - 2 - - -
+ - - - - - - - - - - - - - - 
+ - - - - 2 - - - 2 - - - - - 
+ - - - - - - - - - - - - - - 
+ - - - - - - - - - - - - - - 
+
+ rodmap C22
+ - - - - - - - - - - - - - - 
+ - - - - - - - - - - - - - - 
+ - - - - - 2 - - - 2 - - - - 
+ - - - - - - - - - - - - - - 
+ - - - 2 - - - 2 - - - 2 - - 
+ - - - - - - - - - - - - - - 
+ - - - - - 2 - - - 2 - - - - 
+ - - - - - - - - - - - - - - 
+ - - - 2 - - - 2 - - - 2 - - 
+ - - - - - - - - - - - - - - 
+ - - - - - 2 - - - 2 - - - -
+ - - - - - - - - - - - - - -
+ - - - - - - - - - - - - - -
+ - - - - - - - - - - - - - - 
+
+ axial 1   0.0
+       C11 1.67
+       C12 80.3
+
+ axial 2   0.0
+       C21 1.67
+       C22 80.3
+
+
+[STATE] 
+ sym   full
+ power 100.0
+ flow  100.0
+ tinlet 21.13 C
+ tfuel 600 K
+ modden 1.0
+ rodbank 1 4248 !3848
+ 	 2 4248 !3848
+ edit fsr_flux_2g fsr_flux_power 
+
+[EDITS]
+  axial_edit_bounds
+    4.50
+    9.1  !BAF
+    15.955
+    22.810
+    29.665
+    36.520
+    43.375
+    50.230
+    57.085
+    63.94 !TAF
+    69.34
+    75.65
+    80.30
+
+[MPACT]
+   jagged                false
+   refl_no_added_modules false
+   num_space             60 !76
+   par_method            GRAPH
+   graph_part_method     REB
+   ray_spacing           0.04
+   shield_ray_spacing    0.04
+   res_up_scatter        false
+   meshing_method        matbound
+   nodal_method          nem
+
+!MSED
+!   cmfd                          msed
+!   cmfd_shift_method             none
+!   cmfd_shift_method_1G          adaptive
+!   cmfd_num_inners               2
+!   cmfd_num_inners_1G            5
+!   petsc_linear_solver_method    multigrid
+!   petsc_linear_solver_method_1G multigrid
+!   multigrid_smoother            sor
+!   multigrid_num_smooth          2
+!   multigrid_cg_solver           gmres
+!   multigrid_cg_solver_its       10
+!   multigrid_smoother_1G         sor
+!   multigrid_cg_solver_1G        gmres
+!   multigrid_cg_solver_its_1G    15

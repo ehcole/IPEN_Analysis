@@ -3,7 +3,7 @@
   size 6
   apitch 21.0
   height 80.3
-  rated 0.0001 1
+  rated 0.000001 1
   lower_plate GP 2.2 0.99
 
   lower_ref H2O 30.0 0.5
@@ -325,7 +325,7 @@
  cell RB     0.7499 / REF
  
  !heavy water
- cell HW     0.6 / D2O
+ cell HW     0.7499 / D2O
 
  axial S1 0.0
        S11 9.10
@@ -458,7 +458,7 @@
  sym   full
  power 100.0
  flow  100.0
- tinlet 21.08 C
+ tinlet 22 C
  tfuel 600 K
  modden 1.0
  boron 0

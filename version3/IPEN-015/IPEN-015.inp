@@ -453,8 +453,8 @@
  tinlet 21.13 C
  tfuel 600 K
  modden 1.0
- rodbank 1 4205
- 	 2 4205
+ rodbank 1 4205 !3825
+ 	 2 4205 !3825
  edit fsr_flux_2g fsr_flux_power 
 
 [EDITS]
