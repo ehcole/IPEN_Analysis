@@ -1,7 +1,7 @@
 [CORE]
   include materials-3.ini
   size 6
-  apitch 21.0
+  apitch 21.0 !21.0
   height 1.0
   rated 0.000001 1
   !lower_plate GP 2.2 0.99
@@ -327,8 +327,6 @@
  !reflector box
  cell RB     0.7499 / REF
  
- !heavy water
- cell WW     0.7499 / D2O
 
  axial S1 0.0
        S12 1.0
@@ -437,7 +435,7 @@
  sym   full
  power 100.0
  flow  100.0
- tinlet 21.08 C
+ tinlet 22 C
  tfuel 600 K
  modden 1.0
  boron 0
@@ -457,7 +455,7 @@
    res_up_scatter        false
 !   power_edit          fission
    axial_buckling      0.0002494
-   !nodal_method	       nem
+   nodal_method	       nem
  
    
 !MSED

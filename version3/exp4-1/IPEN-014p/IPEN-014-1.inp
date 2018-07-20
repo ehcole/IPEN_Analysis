@@ -370,12 +370,12 @@
 [STATE]
  tinlet 21.084 C
  rodbank 1 3973
-	 2 8183
+	 2 8568
 
 [STATE]
  tinlet 21.13 C
  rodbank 1 4212
-	 2 7792
+	 2 8183
  
 [EDITS]
   axial_edit_bounds

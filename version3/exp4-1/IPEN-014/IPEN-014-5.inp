@@ -273,8 +273,8 @@
 [CONTROL]
  title "control rods"
  npin 14
- stroke 80.3 8030
-! stroke 80.3 10000
+ !stroke 80.3 8030
+ stroke 80.3 10000
 
  cell 1 0.49037 / CDG !bottom of rod is same material as cladding--table 3.6-1 (pg 306)
  cell 2 0.416 0.42873 0.49037 / CRA air CDG
@@ -356,32 +356,32 @@
  sym   full
  power 100.0
  flow  100.0
- tinlet 22 C
+ tinlet 21.07 C
  tfuel 600 K
  modden 1.0
- rodbank 1 4463
-	 2 3418
+ rodbank 1 6813
+	 2 4899
  edit fsr_flux_2g fsr_flux_power
 
 [STATE]
- tinlet 22 C
- rodbank 1 4578
-	 2 3327
+ tinlet 21.14 C
+ rodbank 1 7024
+	 2 4732
 
 [STATE]
- tinlet 22 C
- rodbank 1 4693
-	 2 3243
+ tinlet 21.15 C
+ rodbank 1 7235
+	 2 4578
 
 [STATE]
- tinlet 22 C
- rodbank 1 4823
-	 2 3149
+ tinlet 21.19 C
+ rodbank 1 7472
+	 2 4406
 
 [STATE]
- tinlet 22 C
- rodbank 1 4966
-	 2 3052
+ tinlet 21.17 C
+ rodbank 1 7735
+	 2 4229
 
 [EDITS]
   axial_edit_bounds

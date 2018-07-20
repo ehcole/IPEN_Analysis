@@ -369,8 +369,8 @@ axial R1 0.0
 [CONTROL]
  title "control rods"
  npin 14
- stroke 80.3 8030
-
+ !stroke 80.3 8030
+ stroke 80.3 10000
  cell 1 0.49037 / CDG !bottom of rod is same material as cladding--table 3.6-1 (pg 306)
  cell 2 0.416 0.42873 0.49037 / CRA air CDG
 
@@ -447,18 +447,22 @@ axial R1 0.0
        C22 80.3
 
 
-[STATE]
+[STATE] !section 1
  sym   full
  power 100.0
  flow  100.0
- tinlet 22 C
+ tinlet 20 C
  tfuel 600 K
  modden 1.0
  boron 0
- rodbank 1 3910 !pg 294 exp 4
-	 2 3910
+ rodbank 1 5806 !3910 !pg 294 exp 4
+	 2 5809 !3910
  edit fsr_flux_2g fsr_flux_power
  
+
+[STATE]
+ rodbank 1 10000
+ 	 2 10000
 
 
 [EDITS]
@@ -480,7 +484,7 @@ axial R1 0.0
 [MPACT]
    jagged                false
    refl_no_added_modules false
-   num_space             60 !76
+   num_space             60
    par_method            GRAPH
    graph_part_method     REB
    ray_spacing           0.04

@@ -358,13 +358,9 @@
  flow  100.0
  tinlet 21.17 C
  modden 1.0
- rodbank 1 8044
-	 2 4038
- edit fsr_flux_2g fsr_flux_power
-
-[STATE]
  rodbank 1 8404
 	 2 4038
+ edit fsr_flux_2g fsr_flux_power
 
 [STATE]
  tinlet 21.20 C
@@ -375,6 +371,11 @@
  tinlet 21.19 C
  rodbank 1 9352
 	 2 3614
+
+[STATE]
+ tinlet 21.17 C
+ rodbank 1 9963
+	 2 3406
 
 [STATE]
  tinlet 21.17 C

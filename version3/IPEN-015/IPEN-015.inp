@@ -3,7 +3,7 @@
   size 6
   apitch 21.0
   height 80.3
-  rated 0.0001 1
+  rated 0.000001 1
   lower_plate GP 2.2 0.99
 
   lower_ref H2O 30.0 0.5
@@ -367,8 +367,8 @@
 [CONTROL]
  title "control rods"
  npin 14
- stroke 80.3 8030
-! stroke 80.3 10000
+! stroke 80.3 8030
+ stroke 80.3 10000
 
  cell 1 0.49037 / CDG !bottom of rod is same material as cladding--table 3.6-1 (pg 306)
  cell 2 0.416 0.42873 0.49037 / CRA air CDG
@@ -453,8 +453,8 @@
  tinlet 21.13 C
  tfuel 600 K
  modden 1.0
- rodbank 1 4205 !3825
- 	 2 4205 !3825
+ rodbank 1 5645
+ 	 2 5645
  edit fsr_flux_2g fsr_flux_power 
 
 [EDITS]

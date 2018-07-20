@@ -1,7 +1,7 @@
 [CORE]
   include materials-3.ini
   size 6
-  apitch 21.0
+  apitch 21.0 !21.0
   height 1.0
   rated 0.000001 1
   !lower_plate GP 2.2 0.99

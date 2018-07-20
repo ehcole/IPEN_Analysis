@@ -360,18 +360,13 @@
  tinlet 21.24 C
  modden 1.0
  rodbank 1 5955
-	 2 5653
+	 2 5849
  edit fsr_flux_2g fsr_flux_power
 
 [STATE]
  tinlet 21.22 C
  rodbank 1 6144
 	 2 5653
-
-[STATE]
- tinlet 21.22 C
- rodbank 1 6144
-	 2 5473
 
 [STATE]
  tinlet 21.20 C
@@ -382,6 +377,11 @@
  tinlet 21.25 C
  rodbank 1 6574
 	 2 5276
+
+[STATE]
+ tinlet 21.25 C
+ rodbank 1 6813
+	 2 5092
 
 [EDITS]
   axial_edit_bounds

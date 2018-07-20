@@ -272,8 +272,8 @@
 [CONTROL]
  title "control rods"
  npin 14
- stroke 80.3 8030
-! stroke 80.3 10000
+ !stroke 80.3 8030
+ stroke 80.3 10000
 
  cell 1 0.49037 / CDG !bottom of rod is same material as cladding--table 3.6-1 (pg 306)
  cell 2 0.416 0.42873 0.49037 / CRA air CDG
@@ -359,34 +359,34 @@
  tfuel 600 K
  modden 1.0
  boron 0.082
- rodbank 1 4260 !pg 292 exp 4
-	 2 4260
+ rodbank 1 5800 !pg 292 exp 4
+	 2 5800
  edit fsr_flux_2g fsr_flux_power
 
 [STATE]
  boron 6.067
- rodbank 1 4260
-	 2 4403
+ rodbank 1 5800
+	 2 6062
 
 [STATE]
  boron 11.028
- rodbank 1 4260
-	 2 4538
+ rodbank 1 5800
+	 2 6310
  
 [STATE]
  boron 21.980
- rodbank 1 4260
-	 2 4816
+ rodbank 1 5800
+	 2 6819
 
 [STATE]
  boron 43.230
- rodbank 1 4260
-	 2 5487
+ rodbank 1 5800
+	 2 8047
 
 [STATE]
  boron 95.742
- rodbank 1 6533
-	 2 5679
+ rodbank 1 9963
+	 2 8400
 
 [EDITS]
   axial_edit_bounds
