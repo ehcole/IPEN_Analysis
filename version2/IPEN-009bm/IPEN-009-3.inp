@@ -1,0 +1,169 @@
+[CORE]
+  include materials-1.ini
+  size 3
+  apitch 42.0
+  height 1.0
+  rated 0.000004 1
+
+  !lower_plate GP 2.2 0.99
+
+  !lower_ref H2O 30.0 0.5
+  bc_top reflecting
+  bc_bot reflecting
+  bc_rad reflecting
+
+  assm_map
+	A1
+
+  crd_map
+	 1
+
+  crd_bank
+	 1	
+
+  core_shape
+	0 0 0
+	0 1 0
+	0 0 0
+
+[ASSEMBLY]
+ title "IPEN/MB-01 28x26" 
+ npin 28	   !pg 305
+ ppitch 1.5	   !pg 305
+
+
+ rodmap 2
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2
+ F2 F2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 F2 F2 F2 F2 F2 GT F2 F2 F2 GT F2 F2 F2 F2 F2
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2
+ F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 F2 GT F2 F2 F2 GT F2 F2 F2 GT F2 F2 F2
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2
+ F2 F2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 F2 F2 F2 F2 F2 GT F2 F2 F2 GT F2 F2 F2 F2 F2
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2
+ F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 F2 GT F2 F2 F2 GT F2 F2 F2 GT F2 F2 F2
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2
+ F2 F2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 F2 F2 F2 F2 F2 GT F2 F2 F2 GT F2 F2 F2 F2 F2
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2
+ F2 F2 F2 F2 F2 GT F2 F2 F2 GT F2 F2 F2 F2 F2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 F2 F2
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2
+ F2 F2 F2 GT F2 F2 F2 GT F2 F2 F2 GT F2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2
+ F2 F2 F2 F2 F2 GT F2 F2 F2 GT F2 F2 F2 F2 F2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 F2 F2
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2
+ F2 F2 F2 GT F2 F2 F2 GT F2 F2 F2 GT F2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2
+ F2 F2 F2 F2 F2 GT F2 F2 F2 GT F2 F2 F2 F2 F2 F2 F2 F2 G2 F2 F2 F2 G2 F2 F2 F2 F2 F2
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2
+ F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2 F2
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW
+ WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW
+
+ fuel UO2 0.0 0.0 / 0.0 U-234 7.8462E-06 !table 3.6-1 pg 306
+      	      	    	U-235 9.9924E-04
+			U-238 2.1694E-02
+			 O-16 4.5489E-02
+
+!cells. data from figure 3.6-2 pg 304
+!fuel rod
+ cell F2	0.42447 0.42873 0.49037 / UO2 air CDG !UO2 section of fuel rod
+
+!guide tube
+ cell GT	0.565 0.6 / mod GTC
+ cell G2        0.565 0.6 / H2O GTC
+      	    
+!water
+ cell WW	0.6				  / H2O
+
+
+!data from figure 3.6-2 pg 304 
+axial A1   0.00
+      2	   1.00
+
+
+[CONTROL]
+ title "control rods"
+ npin 28
+ stroke 1 1
+
+
+
+ cell 2 0.416 0.42873 0.49037 / CRA air CDG
+
+ rodmap C2
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ - - - - - - - - - - - - - - - - - - 2 - - - 2 - - - - -
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ - - - - - - - - - - - - - - - - 2 - - - 2 - - - 2 - - -
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ - - - - - - - - - - - - - - - - - - 2 - - - 2 - - - - -
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ - - - - - - - - - - - - - - - - 2 - - - 2 - - - 2 - - -
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ - - - - - - - - - - - - - - - - - - 2 - - - 2 - - - - -
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ - - - - - 2 - - - 2 - - - - - - - - - - - - - - - - - -
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ - - - 2 - - - 2 - - - 2 - - - - - - - - - - - - - - - -
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ - - - - - 2 - - - 2 - - - - - - - - - - - - - - - - - -
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ - - - 2 - - - 2 - - - 2 - - - - - - - - - - - - - - - -
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ - - - - - 2 - - - 2 - - - - - - - - - - - - - - - - - -
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+axial 1 0.0
+      C2 1.00
+
+[STATE]
+ sym   full
+ power 100.0
+ flow  100.0
+ tinlet 20 C
+ tfuel 600 K
+ rodbank 1 0
+ modden 1.0
+ edit fsr_flux_2g fsr_flux_power
+
+
+[MPACT]
+   jagged                false
+   refl_no_added_modules false    
+   num_space             16
+   par_method            GRAPH
+   graph_part_method     REB
+   ray_spacing           0.04
+   shield_ray_spacing    0.04
+   res_up_scatter        false
+!   power_edit          fission
+   axial_buckling      0.0010247
+  ! Meshing
+   mesh fuel 10 1 1 10 / 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36
+   mesh rect 30 30
+   
+!MSED
+!   cmfd                          msed
+!   cmfd_shift_method             none
+!   cmfd_shift_method_1G          adaptive
+!   cmfd_num_inners               2
+!   cmfd_num_inners_1G            5
+!   petsc_linear_solver_method    multigrid
+!   petsc_linear_solver_method_1G multigrid
+!   multigrid_smoother            sor
+!   multigrid_num_smooth          2
+!   multigrid_cg_solver           gmres
+!   multigrid_cg_solver_its       10
+!   multigrid_smoother_1G         sor
+!   multigrid_cg_solver_1G        gmres
+!   multigrid_cg_solver_its_1G    15

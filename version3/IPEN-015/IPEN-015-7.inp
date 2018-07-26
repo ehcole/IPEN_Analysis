@@ -459,6 +459,34 @@
  	 2 5801
  edit fsr_flux_2g fsr_flux_power 
 
+[STATE]
+ rodbank 1 5645
+ 	 2 5645
+
+[STATE]
+ rodbank 1 5687
+ 	 2 5687
+
+[STATE]
+ rodbank 1 5805
+ 	 2 5805
+
+[STATE]
+ rodbank 1 5869
+ 	 2 5869
+
+[STATE]
+ rodbank 1 6063
+ 	 2 6063
+
+[STATE]
+ rodbank 1 6175
+ 	 2 6175
+
+[STATE]
+ rodbank 1 6176
+ 	 2 6176
+
 
 [EDITS]
   axial_edit_bounds

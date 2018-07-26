@@ -3,7 +3,7 @@
   size 6
   apitch 21.0
   height 80.3
-  rated 0.0001 1
+  rated 0.000001 1
   lower_plate GP 2.2 0.99
 
   lower_ref H2O 30.0 0.5
@@ -457,10 +457,6 @@
  rodbank 1 6157
  	 2 6157
  edit fsr_flux_2g fsr_flux_power 
-
-[STATE]
- rodbank 1 10000
-	 2 10000
 
 [EDITS]
   axial_edit_bounds

@@ -256,7 +256,7 @@ axial 1 0.0
  tinlet 20 C
  tfuel 600 K
 ! rodbank 1 3972
- rodbank 1 5806
+ rodbank 1 5888
  modden 1
  edit fsr_flux_2g fsr_flux_power
 
@@ -283,7 +283,14 @@ axial 1 0.0
    shield_ray_spacing    0.04
    res_up_scatter        false
    power_edit            fission
-
+   !transient
+   volume_corr       integral
+   cmfd_num_inners   400
+   prompt            true
+   accel             true
+   transmethod       theta  1.0
+   timestep          0.005 0.0001 0.005
+   perturb           0.0  0.005  0.005 const  1 1 2
 
 
    

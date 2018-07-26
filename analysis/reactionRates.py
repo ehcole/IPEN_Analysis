@@ -68,7 +68,7 @@ targets = np.array(targetsList)
 #print(targets)
 diffs = abs(targets - predictions)
 #print(diffs)
-diffPercents = diffs / targets * 100
+diffPercents = diffs / targets
 print("MAPE:", diffPercents.mean())
 print("rmse:", rmse(predictions, targets))
 

@@ -462,14 +462,122 @@
  tfuel 600 K
  modden 1.0
  boron 0
- rodbank 1 5806 !3412 !pg 294 (exp 4)
-         2 5809 !3412
+ rodbank 1 0	!pg 67 exp 4
+         2 7423
  edit fsr_flux_2g fsr_flux_power
 
 
 [STATE]
- rodbank 1 10000
- 	 2 10000
+ rodbank 1 1301
+ 	 2 7212
+
+[STATE]
+ rodbank 1 1858
+ 	 2 7010
+
+[STATE]
+ rodbank 1 2272
+ 	 2 6811
+
+[STATE]
+ rodbank 1 2594 
+ 	 2 6630
+
+[STATE]
+ rodbank 1 2886
+ 	 2 6445
+
+[STATE]
+ rodbank 1 3138
+ 	 2 6272
+
+[STATE]
+ rodbank 1 3395
+ 	 2 6060
+
+[STATE]
+ rodbank 1 3563
+ 	 2 5908
+
+[STATE]
+ rodbank 1 3884
+ 	 2 5739
+
+[STATE]
+ rodbank 1 4058
+ 	 2 5571
+
+[STATE]
+ rodbank 1 4259
+ 	 2 5401
+
+[STATE]
+ rodbank 1 4465
+ 	 2 5238
+
+[STATE]
+ rodbank 1 4655
+ 	 2 5073
+
+[STATE]
+ rodbank 1 4853
+ 	 2 4913
+
+[STATE]
+ rodbank 1 5050
+ 	 2 4749
+
+[STATE]
+ rodbank 1 5253
+ 	 2 4582
+
+[STATE]
+ rodbank 1 5461
+ 	 2 4408
+
+[STATE]
+ rodbank 1 5675
+ 	 2 4230
+
+[STATE]
+ rodbank 1 5878
+ 	 2 4061
+
+[STATE]
+ rodbank 1 6107
+ 	 2 3871
+
+[STATE]
+ rodbank 1 6352
+ 	 2 3662
+
+[STATE]
+ rodbank 1 6582
+ 	 2 3470
+
+[STATE]
+ rodbank 1 6847
+ 	 2 3234
+
+[STATE]
+ rodbank 1 7121
+ 	 2 3001
+
+[STATE]
+ rodbank 1 7407
+ 	 2 2747
+
+[STATE]
+ rodbank 1 7766
+ 	 2 2401
+
+[STATE]
+ rodbank 1 8148
+ 	 2 2012
+
+[STATE]
+ rodbank 1 8560
+ 	 2 1512
 
 
 [EDITS]

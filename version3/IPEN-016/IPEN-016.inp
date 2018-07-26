@@ -3,7 +3,7 @@
   size 4
   apitch 21.0
   height 80.3
-  rated 0.0001 1
+  rated 0.000001 1
   lower_plate GP 2.2 0.99
 
   lower_ref H2O 30.0 0.5
@@ -374,12 +374,12 @@
 	 2 6310
  
 [STATE]
- boron 21.980
+ boron 21.98
  rodbank 1 5800
 	 2 6819
 
 [STATE]
- boron 43.230
+ boron 43.23
  rodbank 1 5800
 	 2 8047
 

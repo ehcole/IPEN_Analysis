@@ -1,3 +1,5 @@
+!!!section 1 data
+
 [CORE]
   include materials-2.ini
   size 4

@@ -7,7 +7,7 @@ for i in range(1, 7):
         lastState = 4
     else:
         lastState = 5
-    h5 = h5py.File("/scratch/wrm_fluxoe/ehcole/IPEN_Analysis/version3/exp4-1/IPEN-014/IPEN-014-" + str(i) + ".h5", 'r')
+    h5 = h5py.File("/scratch/wrm_fluxoe/ehcole/IPEN_Analysis/version3/exp4-1/IPEN-014t/IPEN-014-" + str(i) + ".h5", 'r')
     for j in range(1, lastState + 1):
         state = "STATE_000" + str(j)
         keff = h5[state]["keff"][()]

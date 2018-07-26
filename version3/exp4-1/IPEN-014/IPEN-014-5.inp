@@ -3,7 +3,7 @@
   size 4
   apitch 21.0
   height 80.3
-  rated 0.0001 1 !(pg 74)
+  rated 0.000001 1 !(pg 74)
   lower_plate GP 2.2 0.99
 
   lower_ref H2O 30.0 0.5

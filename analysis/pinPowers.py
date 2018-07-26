@@ -48,7 +48,7 @@ for i in range(normalizedExpData.shape[0]):
         if normalizedExpData[i][j] and modelData[i][j]:
             numDatapoints += 1
             diffs[i][j] = normalizedExpData[i][j] - modelData[i][j]
-            diffPercents[i][j] = diffs[i][j] / normalizedExpData[i][j] * 100
+            diffPercents[i][j] = diffs[i][j] / normalizedExpData[i][j]
             expDataList.append(normalizedExpData[i][j])
             modelDataList.append(modelData[i][j])
 

@@ -356,13 +356,77 @@
  sym   full
  power 100.0
  flow  100.0
- tinlet 20 C
+ tinlet 10 C
  tfuel 600 K
  modden 1.0
  rodbank 1 3109
- 	 2 5726
+ 	 2 5711
  edit fsr_flux_2g fsr_flux_power
 
+[STATE]
+ tinlet 15 C
+ rodbank 1 3109
+ 	 2 5712
+
+[STATE]
+ tinlet 20 C
+ rodbank 1 3109
+ 	 2 5726
+
+[STATE]
+ tinlet 25 C
+ rodbank 1 3109
+ 	 2 5754
+
+[STATE]
+ tinlet 30 C
+ rodbank 1 3109
+ 	 2 5796
+
+[STATE]
+ tinlet 35 C
+ rodbank 1 3109
+ 	 2 5852
+
+[STATE]
+ tinlet 40 C
+ rodbank 1 3109
+ 	 2 5922
+
+[STATE]
+ tinlet 45 C
+ rodbank 1 3109
+ 	 2 6006
+
+[STATE]
+ tinlet 50 C
+ rodbank 1 3109
+ 	 2 6103
+
+[STATE]
+ tinlet 55 C
+ rodbank 1 3109
+ 	 2 6125
+
+[STATE]
+ tinlet 60 C
+ rodbank 1 3109
+ 	 2 6340
+
+[STATE]
+ tinlet 65 C
+ rodbank 1 3109
+ 	 2 6480
+
+[STATE]
+ tinlet 70 C
+ rodbank 1 3109
+ 	 2 6633
+
+[STATE]
+ tinlet 75 C
+ rodbank 1 3109
+ 	 2 6800
 
 [STATE]
  tinlet 80 C

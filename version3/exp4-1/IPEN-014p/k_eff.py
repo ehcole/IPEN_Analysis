@@ -20,8 +20,12 @@ for i in range(1, 7):
                 exit(0)
             else:
                 #print(i, j)
+                bank_pos = h5[state]["bank_pos"]
+                print(bank_pos[0])
+                print(bank_pos[1])
+                print(keff)
                 #print((keff - 1) * 10**5, "pcm")
                 counter += 1
                 total += abs((keff - 1) * 10**5)
-print("mean absolute error:", total / counter, "pcm")
+#print("mean absolute error:", total / counter, "pcm")
             

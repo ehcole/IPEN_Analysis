@@ -20,7 +20,7 @@ for i in range(1, 7):
         counter += 1
 diffs = rho - expData
 absDiffs = np.absolute(diffs)
-diffsPercents = absDiffs / rho
+diffsPercents = absDiffs / expData
 expDataNoOutlier = np.zeros(expData.shape[0] - 1)
 diffsPercentsNoOutlier = np.zeros(expData.shape[0] - 1)
 counter = 0
@@ -35,6 +35,6 @@ for i in range(expData.shape[0]):
     elif i > 24:
         expDataNoOutlier[i - 1] = expData[i]
         diffsPercentsNoOutlier[i - 1] = diffsPercents[i]
-print(diffsPercentsNoOutlier.mean())
-print(total / counter)
-            
+
+print("MAPE:", diffsPercentsNoOutlier.mean())
+print(absDiffs.mean())            
